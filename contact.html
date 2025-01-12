@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Writer</title>
+    <title>Contact Me - Your Name</title>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <div id="page-wrapper">
         <header id="header">
-            <h1>Your Name</h1>
-            <p>Welcome to my personal website, where I share my writing journey and ideas.</p>
+            <h1>Contact Me</h1>
             <nav id="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -22,10 +21,15 @@
             </nav>
         </header>
 
-        <section id="main-content">
-            <h2>Featured Work</h2>
-            <p>Check out my latest book <strong>Book Title</strong>, available for purchase now!</p>
-            <a href="books.html">Browse all books</a>
+        <section id="contact-form">
+            <h2>Get in Touch</h2>
+            <p>If you'd like to reach out for collaborations, questions, or feedback, feel free to send me a message!</p>
+            <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
         </section>
     </div>
 </body>
