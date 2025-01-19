@@ -169,27 +169,87 @@
 							<hr />
 							<h3>Find me on ...</h3>
 							<ul class="social">
-								
+								<li><a href="https://www.amazon.com/stores/Situ-Chen/author/B0CFJXGN7V" target="_blank" class="icon brands fa-amazon"><span class="label">Amazon</span></a></li>
+								<li><a href="#" class="icon brands fa-weixin" id="wechat-icon"><span class="label">WeChat</span></a></li>
+								<!--
+								<li><a href="#" target="_blank" class="icon brands fa-weixin"><span class="label">WeChat</span></a></li>
 								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="https://www.amazon.com/stores/Situ-Chen/author/B0CFJXGN7V" target="_blank" class="icon brands fa-amazon"><span class="label">Amazon</span></a></li>
-								<li><a href="#" target="_blank" class="icon brands fa-weixin"><span class="label">WeChat</span></a></li>
-								<!--
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
 								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
 								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
 								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
 								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
 								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
 								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
 								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
 								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
 								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
 								-->
 							</ul>
+							<!-- WeChat QR Modal -->
+							<div id="wechat-modal" class="modal">
+								<div class="modal-content">
+									<span class="close">&times;</span>
+									<!--h4>Scan WeChat QR Code</h4-->
+									<h4 style="font-family: 'Source Sans Pro', sans-serif; font-weight: 300; color: #4c58c2;">Scan WeChat QR Code</h4>
+									<img src="images/wechat-qr.bmp" alt="WeChat QR Code" style="width: 200px; height: 200px;">
+								</div>
+							</div>
+
+							<style>
+								.modal {
+									display: none;
+									position: fixed;
+									z-index: 1000;
+									left: 0;
+									top: 0;
+									width: 100%;
+									height: 100%;
+									background-color: rgba(0,0,0,0.7);
+								}
+
+								.modal-content {
+									background-color: #fefefe;
+									margin: 15% auto;
+									padding: 20px;
+									border: 1px solid #888;
+									width: 300px;
+									text-align: center;
+									border-radius: 5px;
+								}
+								.close {
+									color: #aaa;
+									float: right;
+									font-size: 28px;
+									font-weight: bold;
+									cursor: pointer;
+								}
+								.close:hover {
+									color: black;
+								}
+							</style>
+							<script>
+								// Get the modal
+								var modal = document.getElementById("wechat-modal");
+								var btn = document.getElementById("wechat-icon");
+								var span = document.getElementsByClassName("close")[0];
+
+								// Open modal when WeChat icon is clicked
+								btn.onclick = function(e) {
+									e.preventDefault();
+									modal.style.display = "block";
+								}
+								// Close modal when X is clicked
+								span.onclick = function() {
+									modal.style.display = "none";
+								}
+								// Close modal when clicking outside
+								window.onclick = function(event) {
+									if (event.target == modal) {
+										modal.style.display = "none";
+									}
+								}
+							</script>
 							<hr />
 						</div>
 					</div>
