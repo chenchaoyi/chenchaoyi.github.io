@@ -34,14 +34,14 @@
                     <div class="col-8 col-12-medium">
                         <article id="post-digital-illustration" class="box style1" style="padding: 2em; margin-bottom: 1.5em;">
                             <h3 style="margin-bottom: 0.5em;">My Journey into Digital Illustration</h3>
-                            <p class="post-meta" style="margin-bottom: 1em; font-size: 0.9em; color: #666;">Posted on April 15, 2024</p>
+                            <p class="post-meta" style="margin-bottom: 1em; font-size: 0.9em; color: #666;">Posted on December 15, 2024</p>
                             <p style="margin-bottom: 1em;">As I experience with new styles and forms of art, one important journey is my transition from tradional hand-drawing to Ipad digital drawing. I hope that by learning this new form of art, the visual impact of my stories will be improved...</p>
                             <a href="blogs/digital-illustration-post.html" class="button small">Read More</a>
                         </article>
 
                         <article id="post-olivias-chapter" class="box style1" style="padding: 2em; margin-bottom: 1.5em;">
                             <h3 style="margin-bottom: 0.5em;">Behind the Scenes: Writing Olivia's Chapter</h3>
-                            <p class="post-meta" style="margin-bottom: 1em; font-size: 0.9em; color: #666;">Posted on April 1, 2024</p>
+                            <p class="post-meta" style="margin-bottom: 1em; font-size: 0.9em; color: #666;">Posted on January 1, 2025</p>
                             <p style="margin-bottom: 1em;">Writing about a young author's journey has been both challenging and deeply personal. Here's a peek into my writing process! I started with the inspiration to craft a realistic fiction novel about a girl's complex relationship with her father, but discovered a deeper story about pursuing dreams and personal growth...</p>
                             <a href="blogs/olivias-chapter-post.html" class="button small">Read More</a>
                         </article>
@@ -57,7 +57,7 @@
                             <h3 style="margin-bottom: 0.5em;">Idea To Creation: A Writer's Journey</h3>
                             <p class="post-meta" style="margin-bottom: 1em; font-size: 0.9em; color: #666;">Posted on January 11, 2025</p>
                             <p style="margin-bottom: 1em;">Every writer's journey begins with a single idea. In this post, I'll share my personal experience of transforming initial story concepts into fully-realized narratives. From the first spark of inspiration to the final draft, I'll discuss my creative process, the challenges faced, and the lessons learned along the way.</p>
-                            <a href="#" class="button small">Read More</a>
+                            <a href="https://mp.weixin.qq.com/s/faRPdNUwCTLCdlkTfANQJQ" class="button small">Read More</a>
                         </article>
                     </div>
 
@@ -65,39 +65,8 @@
                     <div class="col-3 col-12-medium">
                         <div class="box style1" style="position: sticky; top: 2em; padding: 1.2em; font-size: 0.85em; text-align: left;">
                             <h3 style="margin-bottom: 0.8em; border-bottom: 2px solid #e44c65; font-size: 1.1em;">Contents</h3>
-                            <div style="display: flex; flex-direction: column; gap: 0.6em;">
-                                <div>
-                                    <h4 style="color: #666; font-size: 0.85em; margin-bottom: 0.4em;">2025</h4>
-                                    <ul style="list-style: none; padding: 0; margin: 0;">
-                                        <li style="margin-bottom: 0.6em;">
-                                            <a href="#post-idea-to-creation" style="text-decoration: none; display: flex; justify-content: space-between; align-items: baseline; gap: 0.8em; line-height: 1.2;">
-                                                <span style="flex: 1; min-width: 0;">Idea To Creation: A Writer's Journey</span>
-                                                <span style="font-size: 0.85em; color: #666; white-space: nowrap;">Jan 11</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <h4 style="color: #666; font-size: 0.85em; margin-bottom: 0.4em;">2024</h4>
-                                    <ul style="list-style: none; padding: 0; margin: 0;">
-                                        <li style="margin-bottom: 0.6em;">
-                                            <a href="#post-digital-illustration" style="text-decoration: none; display: flex; justify-content: space-between; align-items: baseline; gap: 0.8em; line-height: 1.2;">
-                                                <span style="flex: 1; min-width: 0;">My Journey into Digital Illustration</span>
-                                                <span style="font-size: 0.85em; color: #666; white-space: nowrap;">Apr 15</span>
-                                            </a>
-                                        </li>
-                                        <li style="margin-bottom: 0.6em;">
-                                            <a href="#post-olivias-chapter" style="text-decoration: none; display: flex; justify-content: space-between; align-items: baseline; gap: 0.8em; line-height: 1.2;">
-                                                <span style="flex: 1; min-width: 0;">Behind the Scenes: Writing Olivia's Chapter</span>
-                                                <span style="font-size: 0.85em; color: #666; white-space: nowrap;">Apr 1</span>
-                                            </a>
-                                        </li>                                      
-                                        <li style="margin-bottom: 0.6em;">
-                                            <a href="#post-witch-princess" style="text-decoration: none; display: flex; justify-content: space-between; align-items: baseline; gap: 0.8em; line-height: 1.2;">
-                                                <span style="flex: 1; min-width: 0;">A Witch and Princess Seeking "The End"</span>
-                                                <span style="font-size: 0.85em; color: #666; white-space: nowrap;">Jun 23</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div id="toc-content" style="display: flex; flex-direction: column; gap: 0.6em;">
+                                <!-- TOC will be generated here -->
                             </div>
                         </div>
                     </div>
@@ -123,6 +92,68 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
-
+        
+        <script>
+            // Generate Table of Contents
+            document.addEventListener('DOMContentLoaded', function() {
+                const posts = document.querySelectorAll('.col-8 article');
+                const tocContent = document.getElementById('toc-content');
+                
+                // Group posts by year
+                const postsByYear = {};
+                posts.forEach(post => {
+                    const dateText = post.querySelector('.post-meta').textContent;
+                    const date = new Date(dateText.replace('Posted on ', ''));
+                    const year = date.getFullYear();
+                    
+                    if (!postsByYear[year]) {
+                        postsByYear[year] = [];
+                    }
+                    
+                    postsByYear[year].push({
+                        id: post.id,
+                        title: post.querySelector('h3').textContent,
+                        date: date
+                    });
+                });
+                
+                // Sort years in descending order
+                const years = Object.keys(postsByYear).sort((a, b) => b - a);
+                
+                // Generate TOC HTML
+                let tocHtml = '';
+                years.forEach(year => {
+                    tocHtml += `
+                        <div>
+                            <h4 style="color: #666; font-size: 0.85em; margin-bottom: 0.4em;">${year}</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                    `;
+                    
+                    // Sort posts within each year by date
+                    postsByYear[year]
+                        .sort((a, b) => b.date - a.date)
+                        .forEach(post => {
+                            const month = post.date.toLocaleString('en-US', { month: 'short' });
+                            const day = post.date.getDate();
+                            
+                            tocHtml += `
+                                <li style="margin-bottom: 0.6em;">
+                                    <a href="#${post.id}" style="text-decoration: none; display: flex; justify-content: space-between; align-items: baseline; gap: 0.8em; line-height: 1.2;">
+                                        <span style="flex: 1; min-width: 0;">${post.title}</span>
+                                        <span style="font-size: 0.85em; color: #666; white-space: nowrap;">${month} ${day}</span>
+                                    </a>
+                                </li>
+                            `;
+                        });
+                    
+                    tocHtml += `
+                            </ul>
+                        </div>
+                    `;
+                });
+                
+                tocContent.innerHTML = tocHtml;
+            });
+        </script>
     </body>
 </html>
