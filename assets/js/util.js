@@ -585,3 +585,18 @@
 	};
 
 })(jQuery);
+
+// Add this function at the end of util.js
+(function() {
+    if (!document.querySelector("link[rel='icon']")) {
+        const favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.type = 'image/x-icon';
+        // Get base URL by removing everything after the last slash
+        const baseUrl = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+        // If we're in a subdirectory (contains '/blogs/'), go up one level
+        const faviconPath = baseUrl.includes('/blogs/') ? '../images/favicon.ico' : 'images/favicon.ico';
+        favicon.href = faviconPath;
+        document.head.appendChild(favicon);
+    }
+})();
