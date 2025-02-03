@@ -15,6 +15,25 @@
             .blog-post.box {
                 padding-bottom: 1em; /* Reduce internal bottom padding of the box */
             }
+            .pagination a {
+                color: #484848;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            
+            .pagination a:hover {
+                color: #e44c65;
+            }
+            
+            .pagination .disabled {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+            
+            #page-info {
+                display: inline-block;
+                vertical-align: middle;
+            }
         </style>
     </head>
     <body class="is-preload">
@@ -42,40 +61,57 @@
                 <div class="row">
                     <!-- Blog Posts -->
                     <div class="col-8 col-12-medium">
-                        <article id="post-digital-illustration" class="box style1 blog-post">
-                            <h3>My Journey into Digital Illustration</h3>
-                            <p class="post-meta">Posted on January 25, 2025</p>
-                            <p>As I experience with new styles and forms of art, one important journey is my transition from tradional hand-drawing to Ipad digital drawing. I hope that by learning this new form of art, the visual impact of my stories will be improved...</p>
-                            <a href="blogs/digital-illustration-post.html" class="button small">Read More</a>
-                        </article>
+                        <!-- Blog Posts -->
+                        <div id="blog-posts">
+                            <article id="post-digital-illustration" class="box style1 blog-post">
+                                <h3>My Journey into Digital Illustration</h3>
+                                <p class="post-meta">Posted on January 25, 2025</p>
+                                <p>As I experience with new styles and forms of art, one important journey is my transition from tradional hand-drawing to Ipad digital drawing. I hope that by learning this new form of art, the visual impact of my stories will be improved...</p>
+                                <a href="blogs/digital-illustration-post.html" class="button small">Read More</a>
+                            </article>
 
-                        <article id="post-olivias-chapter" class="box style1 blog-post">
-                            <h3>Behind the Scenes: Writing Olivia's Chapter</h3>
-                            <p class="post-meta">Posted on January 22, 2025</p>
-                            <p>Writing about a young author's journey has been both challenging and deeply personal. Here's a peek into my writing process! I started with the inspiration to craft a realistic fiction novel about a girl's complex relationship with her father, but discovered a deeper story about pursuing dreams and personal growth...</p>
-                            <a href="blogs/olivias-chapter-post.html" class="button small">Read More</a>
-                        </article>
+                            <article id="post-olivias-chapter" class="box style1 blog-post">
+                                <h3>Behind the Scenes: Writing Olivia's Chapter</h3>
+                                <p class="post-meta">Posted on January 22, 2025</p>
+                                <p>Writing about a young author's journey has been both challenging and deeply personal. Here's a peek into my writing process! I started with the inspiration to craft a realistic fiction novel about a girl's complex relationship with her father, but discovered a deeper story about pursuing dreams and personal growth...</p>
+                                <a href="blogs/olivias-chapter-post.html" class="button small">Read More</a>
+                            </article>
 
-                        <article id="post-idea-to-creation" class="box style1 blog-post">
-                            <h3>Idea To Creation: A Writer's Journey</h3>
-                            <p class="post-meta">Posted on January 20, 2025</p>
-                            <p>Every writer's journey begins with a single idea. In this post, I'll share my personal experience of transforming initial story concepts into fully-realized narratives. From the first spark of inspiration to the final draft, I'll discuss my creative process, the challenges faced, and the lessons learned along the way.</p>
-                            <a href="https://mp.weixin.qq.com/s/faRPdNUwCTLCdlkTfANQJQ" class="button small">Read More</a>
-                        </article>
+                            <article id="post-idea-to-creation" class="box style1 blog-post">
+                                <h3>Idea To Creation: A Writer's Journey</h3>
+                                <p class="post-meta">Posted on January 20, 2025</p>
+                                <p>Every writer's journey begins with a single idea. In this post, I'll share my personal experience of transforming initial story concepts into fully-realized narratives. From the first spark of inspiration to the final draft, I'll discuss my creative process, the challenges faced, and the lessons learned along the way.</p>
+                                <a href="https://mp.weixin.qq.com/s/faRPdNUwCTLCdlkTfANQJQ" class="button small">Read More</a>
+                            </article>
 
-                        <article id="post-witch-princess" class="box style1 blog-post">
-                            <h3>A Witch and Princess Seeking "The End" (One of my book reviews!)</h3>
-                            <p class="post-meta">Posted on June 23, 2024</p>
-                            <p>A book review about The School for Good and Evil</p>
-                            <a href="https://mp.weixin.qq.com/s/MR8bnTsH5p8AtXOTdtd-Mg" class="button small">Read More</a>
-                        </article>
-                        
-                        <article id="post-witch-princess" class="box style1 blog-post">
-                            <h3>A Witch and Princess Seeking "The End" (One of my book reviews!)</h3>
-                            <p class="post-meta">Posted on May 23, 2024</p>
-                            <p>A book review about The School for Good and Evil</p>
-                            <a href="https://mp.weixin.qq.com/s/MR8bnTsH5p8AtXOTdtd-Mg" class="button small">Read More</a>
-                        </article>
+                            <article id="post-moana2" class="box style1 blog-post">
+                                <h3>Evil Coconuts, A Chicken, A Pig And An Island</h3>
+                                <p class="post-meta">Posted on January 2, 2025</p>
+                                <p>A movie review of Moana 2</p>
+                                <a href="https://mp.weixin.qq.com/s/6T0xizWDtwae_VSMbj4RiQ" class="button small">Read More</a>
+                            </article>
+                            
+                            <article id="post-magic-hp" class="box style1 blog-post">
+                                <h3>I Can't Take My Eyes Off This Magic Book !!!</h3>
+                                <p class="post-meta">Posted on December 25, 2024</p>
+                                <p>A book review of the Harry Potter series</p>
+                                <a href="https://mp.weixin.qq.com/s/c8YXbUhdY7gnhGfiGNWbxg" class="button small">Read More</a>
+                            </article>
+
+                            <article id="post-witch-princess" class="box style1 blog-post">
+                                <h3>A Witch and Princess Seeking "The End" (One of my book reviews!)</h3>
+                                <p class="post-meta">Posted on May 23, 2024</p>
+                                <p>A book review about The School for Good and Evil</p>
+                                <a href="https://mp.weixin.qq.com/s/MR8bnTsH5p8AtXOTdtd-Mg" class="button small">Read More</a>
+                            </article>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination" style="text-align: center; margin-top: 2em;">
+                            <a href="#" id="prev-page">← Previous</a>
+                            <span id="page-info" style="margin: 0 1em;">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+                            <a href="#" id="next-page">Next →</a>
+                        </div>
                     </div>
 
                     <!-- Table of Contents - Sidebar -->
@@ -114,6 +150,49 @@
             // Generate Table of Contents
             $(document).ready(function() {
                 $('#toc-content').generateTOC();
+                
+                // Pagination functionality
+                const postsPerPage = 5;
+                const blogPosts = $('.blog-post').toArray();
+                const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+                let currentPage = 1;
+
+                function showPage(page) {
+                    const start = (page - 1) * postsPerPage;
+                    const end = start + postsPerPage;
+                    
+                    $('.blog-post').hide();
+                    blogPosts.slice(start, end).forEach(post => {
+                        $(post).show();
+                    });
+                    
+                    $('#current-page').text(page);
+                    $('#total-pages').text(totalPages);
+                    
+                    // Update button states
+                    $('#prev-page').toggleClass('disabled', page === 1);
+                    $('#next-page').toggleClass('disabled', page === totalPages);
+                }
+
+                // Initialize pagination
+                showPage(1);
+
+                // Event handlers for pagination buttons
+                $('#prev-page').click(function(e) {
+                    e.preventDefault();
+                    if (currentPage > 1) {
+                        currentPage--;
+                        showPage(currentPage);
+                    }
+                });
+
+                $('#next-page').click(function(e) {
+                    e.preventDefault();
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        showPage(currentPage);
+                    }
+                });
             });
         </script>
     </body>
