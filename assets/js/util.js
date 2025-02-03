@@ -584,6 +584,71 @@
 
 	};
 
+	/**
+	 * Generate a table of contents from blog posts
+	 * @return {jQuery} jQuery object.
+	 */
+	$.fn.generateTOC = function() {
+		const $this = $(this);
+		const posts = $('.col-8 article');
+		
+		// Group posts by year
+		const postsByYear = {};
+		posts.each(function() {
+			const dateText = $(this).find('.post-meta').text();
+			const date = new Date(dateText.replace('Posted on ', ''));
+			const year = date.getFullYear();
+			
+			if (!postsByYear[year]) {
+				postsByYear[year] = [];
+			}
+			
+			postsByYear[year].push({
+				id: $(this).attr('id'),
+				title: $(this).find('h3').text(),
+				date: date
+			});
+		});
+		
+		// Sort years in descending order
+		const years = Object.keys(postsByYear).sort((a, b) => b - a);
+		
+		// Generate TOC HTML
+		let tocHtml = '';
+		years.forEach(year => {
+			tocHtml += `
+				<div>
+					<h4 style="color: #666; font-size: 0.85em; margin-bottom: 0.4em;">${year}</h4>
+					<ul style="list-style: none; padding: 0; margin: 0;">
+			`;
+			
+			// Sort posts within each year by date
+			postsByYear[year]
+				.sort((a, b) => b.date - a.date)
+				.forEach(post => {
+					const month = post.date.toLocaleString('en-US', { month: 'short' });
+					const day = post.date.getDate();
+					
+					tocHtml += `
+						<li style="margin-bottom: 0.6em;">
+							<a href="#${post.id}" style="text-decoration: none; display: flex; justify-content: space-between; align-items: baseline; gap: 0.8em; line-height: 1.2;">
+								<span style="flex: 1; min-width: 0;">${post.title}</span>
+								<span style="font-size: 0.85em; color: #666; white-space: nowrap;">${month} ${day}</span>
+							</a>
+						</li>
+					`;
+				});
+			
+			tocHtml += `
+					</ul>
+				</div>
+			`;
+		});
+		
+		$this.html(tocHtml);
+		return $this;
+	};
+
 })(jQuery);
 
 // Add this function at the end of util.js
