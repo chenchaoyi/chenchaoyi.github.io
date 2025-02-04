@@ -98,13 +98,20 @@
                                 <a href="https://mp.weixin.qq.com/s/c8YXbUhdY7gnhGfiGNWbxg" class="button small">Read More</a>
                             </article>
 
-                            <article id="post-magic-hp" class="box style1 blog-post">
+                            <article id="post-princess-diary" class="box style1 blog-post">
                                 <h3>🎬 A Disney Dream Comes True</h3>
                                 <p class="post-meta">Posted on December 16, 2024</p>
                                 <p>A movie review of <i><b style="color: #3498db">The Princess Diary</b></i></p>
                                 <a href="https://mp.weixin.qq.com/s/YyoeGB-4fjBonltK-HWt9A" class="button small">Read More</a>
                             </article>
                             
+                            <article id="post-and-then-there-were-none" class="box style1 blog-post">
+                                <h3>🎬 Ten People. Ten Crimes. And One Big Killing Game.</h3>
+                                <p class="post-meta">Posted on November 29, 2024</p>
+                                <p>A movie review of <i><b style="color: #3498db">And Then There Were None</b></i></p>
+                                <a href="https://mp.weixin.qq.com/s/Gr0gqL1XR3eKSgSDORL0CA" class="button small">Read More</a>
+                            </article>
+
                             <article id="post-witch-princess" class="box style1 blog-post">
                                 <h3>📚 A Witch and Princess Seeking "The End"</h3>
                                 <p class="post-meta">Posted on May 23, 2024</p>
@@ -176,13 +183,25 @@
                     $('#current-page').text(page);
                     $('#total-pages').text(totalPages);
                     
-                    // Update button states
                     $('#prev-page').toggleClass('disabled', page === 1);
                     $('#next-page').toggleClass('disabled', page === totalPages);
                 }
 
                 // Initialize pagination
                 showPage(1);
+
+                // Add handler for TOC links
+                $('#toc-content').on('click', 'a', function(e) {
+                    const targetId = $(this).attr('href').substring(1);
+                    const targetPost = $('#' + targetId);
+                    const targetIndex = blogPosts.indexOf(targetPost[0]);
+                    const targetPage = Math.floor(targetIndex / postsPerPage) + 1;
+                    
+                    if (targetPage !== currentPage) {
+                        currentPage = targetPage;
+                        showPage(currentPage);
+                    }
+                });
 
                 // Event handlers for pagination buttons
                 $('#prev-page').click(function(e) {
