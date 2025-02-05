@@ -34,6 +34,87 @@
                 display: inline-block;
                 vertical-align: middle;
             }
+            .toc-category {
+                margin-bottom: 1em;
+            }
+            
+            .category-header {
+                cursor: pointer;
+                font-weight: bold;
+                margin-bottom: 0.5em;
+                color: #484848;
+            }
+            
+            .category-header:hover {
+                color: #e44c65;
+            }
+            
+            .toggle-icon {
+                display: inline-block;
+                width: 1em;
+                transition: transform 0.3s;
+            }
+            
+            .category-title {
+                margin-left: 0.5em;
+            }
+            
+            .post-count {
+                font-size: 0.9em;
+                color: #666;
+                margin-left: 0.5em;
+            }
+            
+            .category-content {
+                margin-left: 1.5em;
+                display: none;
+                padding-right: 0.5em;
+                max-height: 400px;
+                overflow-y: auto;
+            }
+            
+            .category-content a {
+                display: block;
+                padding: 0.8em 0;
+                text-decoration: none;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            
+            .category-content a:last-child {
+                border-bottom: none;
+            }
+            
+            .post-entry {
+                display: flex;
+                flex-direction: column;
+                gap: 0.3em;
+            }
+            
+            .post-title {
+                color: #484848;
+                line-height: 1.3;
+            }
+            
+            .post-date {
+                color: #888;
+                font-size: 0.85em;
+            }
+            
+            .category-content a:hover .post-title {
+                color: #e44c65;
+            }
+            
+            .category-content {
+                margin-left: 1.5em;
+                display: none;
+                padding-right: 0.5em;
+                max-height: 400px;
+                overflow-y: auto;
+            }
+            
+            .toc-category.expanded .toggle-icon {
+                transform: rotate(-90deg);
+            }
         </style>
     </head>
     <body class="is-preload">
@@ -143,7 +224,7 @@
                             <article id="post-thoughts-on-god" class="box style1 blog-post">
                                 <h3>My Thoughts On God</h3>
                                 <p class="post-meta">Posted on November 2, 2024</p>
-                                <p>A follow up to <i><b style="color: #3498db">The Book Review of Philosophy: An Encyclopedia</b></i></p>
+                                <p>A follow up to <i><b style="color: #3498db">The Book Review of Philosophy: An Encyclopedia</b></i></p>
                                 <a href="https://mp.weixin.qq.com/s/u5VFNeDQbdPorUJr_UyVqA" class="button small">Read More</a>
                             </article>
 
@@ -183,7 +264,7 @@
                             </article>
 
                             <article id="post-lean-in" class="box style1 blog-post">
-                                <h3>📚 An Enlightenment Of Women’s Rights In Workplace</h3>
+                                <h3>📚 An Enlightenment Of Women's Rights In Workplace</h3>
                                 <p class="post-meta">Posted on September 19, 2024</p>
                                 <p>A book review of <i><b style="color: #3498db">Lean In</b></i></p>
                                 <a href="https://mp.weixin.qq.com/s/TxSVujW8i7gBJCGF4bMapg" class="button small">Read More</a>
@@ -211,9 +292,9 @@
                             </article>
 
                             <article id="post-childrens-books" class="box style1 blog-post">
-                                <h3>My Overall Suggestions and Thoughts on Children’s Books</h3>
+                                <h3>My Overall Suggestions and Thoughts on Children's Books</h3>
                                 <p class="post-meta">Posted on August 13, 2024</p>
-                                <p>An Overview of Children’s Literature</p>
+                                <p>An Overview of Children's Literature</p>
                                 <a href="https://mp.weixin.qq.com/s/j_hN7K7cFI8M652J9Usryw" class="button small">Read More</a>
                             </article>
 
@@ -253,7 +334,7 @@
                             </article>
 
                             <article id="post-roller-girl" class="box style1 blog-post">
-                                <h3>📚 A Girl’s Journey of Rolling, Crashing, Bumping, and Growing</h3>
+                                <h3>📚 A Girl's Journey of Rolling, Crashing, Bumping, and Growing</h3>
                                 <p class="post-meta">Posted on July 2, 2024</p>
                                 <p>A book review of <i><b style="color: #3498db">Roller Girl</b></i></p>
                                 <a href="https://mp.weixin.qq.com/s/nq1p2bQoEG4NGd8eflEXog" class="button small">Read More</a>
@@ -281,7 +362,7 @@
                             </article>
 
                             <article id="post-philosophy" class="box style1 blog-post">
-                                <h3>📚 The Mysterious Minds’ Operations With The Universe</h3>
+                                <h3>📚 The Mysterious Minds' Operations With The Universe</h3>
                                 <p class="post-meta">Posted on June 26, 2024</p>
                                 <p>A book review of <i><b style="color: #3498db">Philosophy, A Visual Encyclopedia</b></i></p>
                                 <a href="https://mp.weixin.qq.com/s/rbBUaGYc4X1Um9G7VPggYQ" class="button small">Read More</a>
@@ -322,7 +403,30 @@
                         <div class="box style1" style="position: sticky; top: 2em; padding: 1.2em; font-size: 0.85em; text-align: left;">
                             <h3 style="margin-bottom: 0.8em; border-bottom: 2px solid #e44c65; font-size: 1.1em;">Contents</h3>
                             <div id="toc-content" style="display: flex; flex-direction: column; gap: 0.6em;">
-                                <!-- TOC will be generated here -->
+                                <div class="toc-category">
+                                    <div class="category-header">
+                                        <span class="toggle-icon">▼</span>
+                                        <span class="category-title">Other Thoughts</span>
+                                        <span class="post-count"></span>
+                                    </div>
+                                    <div class="category-content"></div>
+                                </div>
+                                <div class="toc-category">
+                                    <div class="category-header">
+                                        <span class="toggle-icon">▼</span>
+                                        <span class="category-title">Book Reviews</span>
+                                        <span class="post-count"></span>
+                                    </div>
+                                    <div class="category-content"></div>
+                                </div>
+                                <div class="toc-category">
+                                    <div class="category-header">
+                                        <span class="toggle-icon">▼</span>
+                                        <span class="category-title">Movie Reviews</span>
+                                        <span class="post-count"></span>
+                                    </div>
+                                    <div class="category-content"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -350,64 +454,105 @@
         <script src="assets/js/main.js"></script>
         
         <script>
-            // Generate Table of Contents
             $(document).ready(function() {
-                $('#toc-content').generateTOC();
-                
-                // Pagination functionality
-                const postsPerPage = 5;
-                const blogPosts = $('.blog-post').toArray();
-                const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-                let currentPage = 1;
+                // Categorize posts
+                const posts = $('.blog-post').toArray();
+                const categories = {
+                    'Other Thoughts': posts.filter(post => !$(post).find('h3').text().includes('📚') && !$(post).find('h3').text().includes('🎬')),
+                    'Book Reviews': posts.filter(post => $(post).find('h3').text().includes('📚')),
+                    'Movie Reviews': posts.filter(post => $(post).find('h3').text().includes('🎬'))
+                };
 
-                function showPage(page) {
-                    const start = (page - 1) * postsPerPage;
-                    const end = start + postsPerPage;
+                // Generate TOC for each category
+                Object.entries(categories).forEach(([category, categoryPosts]) => {
+                    const categoryDiv = $(`.category-title:contains("${category}")`).closest('.toc-category');
+                    const contentDiv = categoryDiv.find('.category-content');
                     
-                    $('.blog-post').hide();
-                    blogPosts.slice(start, end).forEach(post => {
-                        $(post).show();
+                    // Update post count
+                    categoryDiv.find('.post-count').text(`(${categoryPosts.length})`);
+                    
+                    // Add posts to category
+                    categoryPosts.forEach(post => {
+                        const title = $(post).find('h3').text();
+                        const date = $(post).find('.post-meta').text().replace('Posted on ', '');
+                        const id = $(post).attr('id');
+                        contentDiv.append(`
+                            <a href="#${id}">
+                                <div class="post-entry">
+                                    <div class="post-title">${title}</div>
+                                    <div class="post-date">${date}</div>
+                                </div>
+                            </a>
+                        `);
                     });
+                });
+
+                // Add click handlers for category headers
+                $('.category-header').click(function() {
+                    const category = $(this).closest('.toc-category');
+                    const content = category.find('.category-content');
                     
-                    $('#current-page').text(page);
-                    $('#total-pages').text(totalPages);
-                    
-                    $('#prev-page').toggleClass('disabled', page === 1);
-                    $('#next-page').toggleClass('disabled', page === totalPages);
+                    category.toggleClass('expanded');
+                    content.slideToggle(200);
+                });
+
+                // Expand the first category by default
+                $('.toc-category:first').addClass('expanded').find('.category-content').show();
+            });
+
+            // Pagination functionality
+            const postsPerPage = 5;
+            const blogPosts = $('.blog-post').toArray();
+            const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+            let currentPage = 1;
+
+            function showPage(page) {
+                const start = (page - 1) * postsPerPage;
+                const end = start + postsPerPage;
+                
+                $('.blog-post').hide();
+                blogPosts.slice(start, end).forEach(post => {
+                    $(post).show();
+                });
+                
+                $('#current-page').text(page);
+                $('#total-pages').text(totalPages);
+                
+                $('#prev-page').toggleClass('disabled', page === 1);
+                $('#next-page').toggleClass('disabled', page === totalPages);
+            }
+
+            // Initialize pagination
+            showPage(1);
+
+            // Add handler for TOC links
+            $('#toc-content').on('click', 'a', function(e) {
+                const targetId = $(this).attr('href').substring(1);
+                const targetPost = $('#' + targetId);
+                const targetIndex = blogPosts.indexOf(targetPost[0]);
+                const targetPage = Math.floor(targetIndex / postsPerPage) + 1;
+                
+                if (targetPage !== currentPage) {
+                    currentPage = targetPage;
+                    showPage(currentPage);
                 }
+            });
 
-                // Initialize pagination
-                showPage(1);
+            // Event handlers for pagination buttons
+            $('#prev-page').click(function(e) {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    showPage(currentPage);
+                }
+            });
 
-                // Add handler for TOC links
-                $('#toc-content').on('click', 'a', function(e) {
-                    const targetId = $(this).attr('href').substring(1);
-                    const targetPost = $('#' + targetId);
-                    const targetIndex = blogPosts.indexOf(targetPost[0]);
-                    const targetPage = Math.floor(targetIndex / postsPerPage) + 1;
-                    
-                    if (targetPage !== currentPage) {
-                        currentPage = targetPage;
-                        showPage(currentPage);
-                    }
-                });
-
-                // Event handlers for pagination buttons
-                $('#prev-page').click(function(e) {
-                    e.preventDefault();
-                    if (currentPage > 1) {
-                        currentPage--;
-                        showPage(currentPage);
-                    }
-                });
-
-                $('#next-page').click(function(e) {
-                    e.preventDefault();
-                    if (currentPage < totalPages) {
-                        currentPage++;
-                        showPage(currentPage);
-                    }
-                });
+            $('#next-page').click(function(e) {
+                e.preventDefault();
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    showPage(currentPage);
+                }
             });
         </script>
     </body>
