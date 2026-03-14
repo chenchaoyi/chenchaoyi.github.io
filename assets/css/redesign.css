@@ -1,0 +1,613 @@
+/*
+  redesign.css — Modern Literary Override
+  Aesthetic: editorial, INTJ writer, clean & sophisticated
+  Palette: warm off-white · near-black · forest green accent
+*/
+
+/* ── Fonts ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── CSS Variables ──────────────────────────────────────── */
+:root {
+  --bg-primary:   #faf9f7;
+  --bg-alt:       #f2f0eb;
+  --bg-dark:      #141414;
+  --text-primary: #1a1a1a;
+  --text-muted:   #6b6869;
+  --accent:       #2c4a3e;
+  --accent-light: #3d6b5b;
+  --border:       rgba(0,0,0,0.10);
+  --white:        #ffffff;
+  --serif:        'Cormorant Garant', Georgia, serif;
+  --sans:         'Inter', 'Open Sans', sans-serif;
+}
+
+/* ── Base Typography ────────────────────────────────────── */
+body,
+input,
+textarea,
+select {
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--text-primary);
+  font-size: 14pt;
+  line-height: 1.8em;
+  background-color: var(--bg-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1em;
+}
+
+h1 strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+h2 {
+  font-size: 2.2em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+b, strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-light) !important;
+}
+
+/* ── Navigation ─────────────────────────────────────────── */
+#nav {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: none;
+  height: 3.5em;
+  line-height: 3.5em;
+}
+
+#nav a {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.85em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted) !important;
+  border-radius: 0;
+  padding: 0 1.4em;
+  transition: color 0.2s ease;
+}
+
+#nav a:hover {
+  color: var(--accent) !important;
+  background: transparent;
+}
+
+#nav a.active {
+  color: var(--accent) !important;
+  background: transparent;
+}
+
+#nav a.active:before {
+  display: none;
+}
+
+/* ── Section Wrappers ───────────────────────────────────── */
+.wrapper {
+  background-image: none;
+  box-shadow: none;
+  padding: 5em 0;
+  text-align: center;
+}
+
+.wrapper.style1 {
+  background-color: var(--white);
+}
+
+.wrapper.style2 {
+  background-color: var(--bg-alt);
+  text-shadow: none;
+}
+
+.wrapper.style3 {
+  background-color: var(--bg-primary);
+  text-shadow: none;
+}
+
+.wrapper.style4 {
+  background-color: var(--bg-dark);
+  color: #a0a0a0;
+  text-shadow: none;
+}
+
+.wrapper.style4 h1,
+.wrapper.style4 h2,
+.wrapper.style4 h3,
+.wrapper.style4 h4,
+.wrapper.style4 h5,
+.wrapper.style4 h6 {
+  color: var(--white);
+}
+
+/* ── Hero (#top) ────────────────────────────────────────── */
+#top {
+  padding: 8em 0;
+  text-align: left;
+}
+
+#top .image {
+  border-radius: 4px;
+  width: 20em;
+  height: 20em;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+}
+
+#top .image img {
+  border-radius: 4px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#top h1 {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+
+#top p {
+  font-size: 1.2em;
+  line-height: 1.7em;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* ── Section Headers ────────────────────────────────────── */
+header {
+  margin: 0 0 2.5em 0;
+}
+
+header > p {
+  font-size: 1.15em;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin: 0.4em 0 0 0;
+}
+
+/* thin decorative line under section h2 */
+.wrapper.style2 header h2::after,
+.wrapper.style3 header h2::after {
+  content: '';
+  display: block;
+  width: 2.5em;
+  height: 2px;
+  background: var(--accent);
+  margin: 0.6em auto 0 auto;
+}
+
+footer {
+  margin: 2.5em 0 0 0;
+}
+
+footer > p {
+  font-size: 1.1em;
+  color: var(--text-muted);
+}
+
+/* ── Work Cards (.box.style1) ───────────────────────────── */
+.box {
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  text-align: center;
+  padding: 2em;
+}
+
+.box.style1 {
+  padding: 2.5em 2em 3em 2em;
+  background: var(--white);
+}
+
+.box.style1 h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-bottom: 0.6em;
+}
+
+.box.style1 p {
+  color: var(--text-muted);
+  font-size: 0.92em;
+  line-height: 1.75em;
+}
+
+/* On the alt background, cards should be white */
+.wrapper.style2 .box.style1 {
+  background: var(--white);
+}
+
+/* ── Portfolio Cards (.box.style2) ──────────────────────── */
+.box.style2 {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+.box.style2 .image {
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: 0 0 1.2em 0;
+  width: auto;
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.box.style2 .image img {
+  display: block;
+  width: 100%;
+  transition: transform 0.4s ease;
+  border-radius: 2px;
+}
+
+.box.style2 .image:hover img {
+  transform: scale(1.03);
+}
+
+.box.style2 h3 {
+  font-family: var(--serif);
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+.box.style2 h3 a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.box.style2 h3 a:hover {
+  color: var(--accent) !important;
+}
+
+.box.style2 p {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+/* ── Featured Icon (Work section) ───────────────────────── */
+.icon.featured {
+  color: var(--accent);
+  display: block;
+  margin: 0 0 1.2em 0;
+}
+
+.icon.featured:before {
+  font-size: 2em;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.button {
+  background-image: none;
+  background-color: var(--accent);
+  color: var(--white) !important;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.85em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: none;
+  padding: 0.9em 2.2em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover,
+.button:hover {
+  background-color: var(--accent-light);
+  color: var(--white) !important;
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active,
+.button:active {
+  background-color: #1f3a2e;
+  top: 0;
+}
+
+input[type="button"].large,
+input[type="submit"].large,
+input[type="reset"].large,
+button.large,
+.button.large {
+  font-size: 0.95em;
+  letter-spacing: 0.10em;
+  padding: 1em 2.5em;
+}
+
+/* Alt button (Clear Form) */
+input[type="button"].alt,
+input[type="submit"].alt,
+input[type="reset"].alt,
+button.alt,
+.button.alt {
+  background-color: transparent;
+  color: var(--text-muted) !important;
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+input[type="button"].alt:hover,
+input[type="submit"].alt:hover,
+input[type="reset"].alt:hover,
+button.alt:hover,
+.button.alt:hover {
+  background-color: var(--border);
+  color: var(--text-primary) !important;
+}
+
+/* ── Form (Contact) ─────────────────────────────────────── */
+.wrapper.style4 form input[type=text],
+.wrapper.style4 form input[type=email],
+.wrapper.style4 form input[type=password],
+.wrapper.style4 form select,
+.wrapper.style4 form textarea {
+  background: #1e1e1e;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #c0c0c0;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.wrapper.style4 form input[type=text]:focus,
+.wrapper.style4 form input[type=email]:focus,
+.wrapper.style4 form input[type=password]:focus,
+.wrapper.style4 form select:focus,
+.wrapper.style4 form textarea:focus {
+  background: #222222;
+  border-color: var(--accent);
+  box-shadow: none;
+}
+
+form input[type=text],
+form input[type=email],
+form input[type=password],
+form select,
+form textarea {
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  background: var(--white);
+  color: var(--text-primary);
+  box-shadow: none;
+  font-family: var(--sans);
+}
+
+form input[type=text]:focus,
+form input[type=email]:focus,
+form input[type=password]:focus,
+form select:focus,
+form textarea:focus {
+  background: var(--white);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(44,74,62,0.12);
+}
+
+form ::-webkit-input-placeholder { color: #999 !important; }
+form :-moz-placeholder            { color: #999 !important; }
+form ::-moz-placeholder           { color: #999 !important; }
+form :-ms-input-placeholder       { color: #999 !important; }
+
+/* ── Social Icons ────────────────────────────────────────── */
+ul.social li a {
+  background-image: none !important;
+  background-color: var(--accent) !important;
+  border-radius: 2px;
+  box-shadow: none !important;
+  color: var(--white) !important;
+  text-shadow: none !important;
+  transition: background-color 0.2s ease, top 0.2s ease;
+}
+
+ul.social li a:before {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+ul.social li a.fa-amazon {
+  background-color: var(--accent) !important;
+}
+
+ul.social li a.fa-weixin {
+  background-color: var(--accent) !important;
+}
+
+ul.social li a:hover {
+  background-color: var(--accent-light) !important;
+  top: -4px;
+}
+
+/* ── HR & Separators ─────────────────────────────────────── */
+hr {
+  border-top: 1px solid rgba(0,0,0,0.12);
+  box-shadow: none;
+}
+
+.wrapper.style4 hr {
+  border-top-color: rgba(255,255,255,0.08);
+}
+
+/* ── Copyright ───────────────────────────────────────────── */
+#copyright {
+  color: #666;
+  font-size: 0.85em;
+}
+
+#copyright li {
+  border-left-color: rgba(255,255,255,0.1);
+  box-shadow: none;
+}
+
+/* ── Blockquote ──────────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid var(--accent);
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* ── Blog page overrides ─────────────────────────────────── */
+.blog-wrapper {
+  background-color: var(--bg-primary);
+}
+
+/* Blog page nav same as main */
+.category-header {
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--text-primary) !important;
+  letter-spacing: 0.03em;
+}
+
+.category-header:hover {
+  color: var(--accent) !important;
+}
+
+.category-content a {
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+.category-content a:hover {
+  color: var(--accent) !important;
+}
+
+.post-title {
+  color: var(--text-primary) !important;
+}
+
+.pagination a {
+  color: var(--text-muted) !important;
+}
+
+.pagination a:hover {
+  color: var(--accent) !important;
+}
+
+/* Blog post boxes */
+.blog-post.box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.blog-post h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+}
+
+.blog-post h3 a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.blog-post h3 a:hover {
+  color: var(--accent) !important;
+}
+
+/* ── WeChat Modal ────────────────────────────────────────── */
+.modal-content {
+  border-radius: 2px;
+  border: 1px solid var(--border);
+}
+
+.modal-content h4 {
+  font-family: var(--serif) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ── Responsive tweaks ───────────────────────────────────── */
+@media screen and (max-width: 980px) {
+  #top {
+    text-align: center;
+    padding: 5em 0;
+  }
+
+  #top .image {
+    margin: 0 auto 2em auto;
+    width: 16em;
+    height: 16em;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  body {
+    font-size: 12pt;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.75em;
+  }
+
+  #top {
+    padding: 3.5em 0;
+  }
+
+  #top .image {
+    width: 13em;
+    height: 13em;
+  }
+
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  button,
+  .button {
+    width: auto;
+  }
+}
