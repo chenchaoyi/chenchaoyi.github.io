@@ -12,21 +12,14 @@
 
         <!-- Nav -->
             <nav id="nav">
-                <!-- legacy ul hidden by CSS -->
-                <ul class="container" style="display:none"></ul>
-                <div class="nav-inner">
-                    <a href="index.html" class="nav-brand">Situ E. Chen</a>
-                    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
-                        <span></span><span></span><span></span>
-                    </button>
-                    <ul class="nav-links" id="nav-links">
-                        <li><a href="index.html#work">Work</a></li>
-                        <li><a href="index.html#portfolio">Books</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="causes.html" class="active">Causes</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
+                <ul class="container">
+                    <li><a href="index.html#top">Top</a></li>
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a class="active" href="causes.html">Things I Care About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
             </nav>
 
         <!-- Main Content -->
@@ -98,21 +91,5 @@
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
 
-        <script>
-        var navToggle = document.getElementById('nav-toggle');
-        var navLinks = document.getElementById('nav-links');
-        if (navToggle && navLinks) {
-            navToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('open');
-                navToggle.classList.toggle('active');
-            });
-            navLinks.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('open');
-                    navToggle.classList.remove('active');
-                });
-            });
-        }
-    </script>
-</body>
+    </body>
 </html> 
