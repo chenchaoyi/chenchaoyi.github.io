@@ -112,7 +112,6 @@ Already hardened. Breakpoints: 860px (collapse multi-column layouts), 640px (ham
 
 - **Contact form** posts to `https://formsubmit.co/6801b45c05adfe30e7b50c80215cde66` — don't change the action URL.
 - **WeChat QR**: `images/wechat-qr.bmp` (legacy BMP) with PNG fallback. Opened via modal on the contact section.
-- **Flag Counter**: image tag in the contact section pointing at `s05.flagcounter.com/count2/JUr8/...` — passive, no JS.
 - **Amazon author store**: `https://www.amazon.com/stores/Situ-Chen/author/B0CFJXGN7V`
 - **Linktree**: `https://linktr.ee/situchen`
 - **Book Amazon links**: hard-coded `https://a.co/d/...` short URLs per book — don't regenerate.
