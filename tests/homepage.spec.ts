@@ -18,7 +18,7 @@ test.describe('Homepage', () => {
   });
 
   test('renders the author illustration', async ({ page }) => {
-    const portrait = page.locator('img[src="images/author3.png"]');
+    const portrait = page.locator('img[src="images/author/author3.png"]');
     await expect(portrait).toBeVisible();
     // Image must actually load (naturalWidth > 0)
     const width = await portrait.evaluate((el: HTMLImageElement) => el.naturalWidth);
