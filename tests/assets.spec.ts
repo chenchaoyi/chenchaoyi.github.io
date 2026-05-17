@@ -12,14 +12,14 @@ test.describe('Static assets', () => {
   });
 
   test('favicon trio responds with the correct content types', async ({ request }) => {
-    const svg = await request.get('/images/favicon.svg');
+    const svg = await request.get('/images/site/favicon.svg');
     expect(svg.status()).toBe(200);
     expect(svg.headers()['content-type']).toContain('image/svg');
 
-    const ico = await request.get('/images/favicon.ico');
+    const ico = await request.get('/images/site/favicon.ico');
     expect(ico.status()).toBe(200);
 
-    const apple = await request.get('/images/apple-touch-icon.png');
+    const apple = await request.get('/images/site/apple-touch-icon.png');
     expect(apple.status()).toBe(200);
     expect(apple.headers()['content-type']).toContain('image/png');
   });
