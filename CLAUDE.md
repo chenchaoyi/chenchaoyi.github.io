@@ -1,147 +1,130 @@
-# CLAUDE.md
+# CLAUDE.md — situchen.me
 
-## 项目概述
+> Operating notes for Claude Code working on this site. Keep edits aligned with the conventions below.
 
-这是 **situchen.me** 的个人作家网站，基于静态 HTML 构建，托管于 GitHub Pages。网站展示了作者的个人介绍、文学作品集、插画作品以及日常随笔博客。
+## What this site is
 
----
+The personal site of **Situ E. Chen** (陈思逢) — a young author and graphic novelist. It showcases her published books, an essay/review journal, and the causes she cares about. Hosted on GitHub Pages at `situchen.me`. Pure static HTML — no build step, no framework.
 
-## 技术栈
-
-| 类别 | 技术 |
-|------|------|
-| 网站类型 | 纯静态 HTML5 |
-| 主题模板 | HTML5 UP - Miniport |
-| 样式 | SASS/SCSS → 编译为 CSS |
-| 图标 | Font Awesome |
-| 字体 | Google Fonts（Open Sans） |
-| 前端库 | jQuery、jQuery Scrolly |
-| 端到端测试 | Playwright（TypeScript） |
-| 托管 | GitHub Pages（域名：situchen.me） |
-
-> 注意：SCSS 源文件位于 `assets/sass/`，已编译好的 CSS 位于 `assets/css/main.css`。修改样式时需同时更新两处，或直接编辑 CSS 文件。
-
----
-
-## 目录结构
+## File layout
 
 ```
 /
-├── index.html               # 主页（作者介绍、作品集、联系方式）
-├── blog.html                # 博客列表页（分类折叠目录）
-├── causes.html              # "我关心的事"页（公益/倡导议题）
-├── CNAME                    # GitHub Pages 自定义域名 (situchen.me)
-├── assets/
-│   ├── css/main.css         # 编译后的主样式表（勿直接频繁手编）
-│   ├── sass/main.scss       # SCSS 样式源文件
-│   └── js/                  # jQuery 及工具脚本
-├── blogs/                   # 各博文独立 HTML 页面（共 12 篇）
-├── images/                  # 图片资源（作者照片、作品封面、插图等）
-├── videos/                  # 视频资源（数字绘画过程视频）
-└── tests/                   # Playwright E2E 测试套件
-    ├── package.json
-    ├── playwright.config.ts
-    ├── homepage.spec.ts
-    ├── blog.spec.ts
-    └── contact.spec.ts
+├─ index.html          Hero, Work, Portfolio, Contact (single-page with hash anchors)
+├─ blog.html           Journal: paginated post list + categorised TOC sidebar
+├─ causes.html         Long-form: Gender Equality + Animal Rights
+├─ blogs/              Individual post pages (one HTML file per post)
+├─ assets/
+│  └─ css/site.css     Single shared stylesheet — ALL styling lives here
+├─ images/             Photos, illustrations, book covers, QR codes
+├─ CNAME               GitHub Pages custom domain
+└─ CLAUDE.md           This file
 ```
 
----
+There is no JS framework, no bundler, no package manager. Edit HTML and `site.css` directly.
 
-## 内容结构
+## Design system (already established — match it)
 
-### 主页 (`index.html`)
-- **Hero 区块**：作者照片与简介
-- **Work 区块**：书籍写作、图像小说、兴趣爱好三类展示
-- **Portfolio 区块**：近期出版作品（含亚马逊链接）
-- **Contact 区块**：联系表单、社交媒体链接（Amazon、Linktree、微信二维码）
+### Aesthetic
+Editorial / literary. Warm cream page with deep ink type, a single terracotta accent, generous whitespace, no card chrome. Looks like a writer's column, not a SaaS landing page.
 
-### 博客列表页 (`blog.html`)
-- 按分类折叠展示博文目录
-- 每篇文章有独立 HTML 页面（位于 `blogs/` 目录）
+### Color tokens (from `site.css` `:root`)
+| Token | Value | Use |
+|---|---|---|
+| `--bg` | `#f3ede1` | Page background — tuned to match the author portrait |
+| `--bg-deep` | `#ebe3d2` | Subtle inset blocks |
+| `--bg-card` | `#faf6ec` | Form inputs |
+| `--ink` | `#1c1916` | Headings, primary text |
+| `--ink-soft` | `#4a443c` | Body text |
+| `--ink-mute` | `#8a8278` | Tertiary / metadata |
+| `--rule` | `rgba(28,25,22,0.12)` | Hairlines |
+| `--accent` | `#a85638` | Terracotta — italic emphasis, hover, single dot in eyebrows |
+| `--blue` | `#4a6b8a` | Reserved; rarely used |
 
-### 博文（`blogs/*.html`，共 12 篇）
-| 文件名 | 内容 |
-|--------|------|
-| `chimes-post.html` | 诗歌 |
-| `crystal-want-writing-post.html` | 关于写作的随笔 |
-| `digital-illustration-post.html` | 数字插画教程 |
-| `disney-problems-post.html` | 迪士尼批评（上） |
-| `disney-problems-post-2.html` | 迪士尼批评（下） |
-| `infinite-post.html` | 哲学随笔 |
-| `introvert-life-post.html` | 内向者生活（图文版） |
-| `introvert-post.html` | 内向者随笔 |
-| `olivias-chapter-post.html` | 叙事散文 |
-| `philosophy-religion-cults-post.html` | 哲学/宗教/邪教分析 |
-| `slaughterhouse-animal-abuse-post.html` | 动物权益倡导 |
-| `social-media-literature-post.html` | 社交媒体与文学评论 |
+**Never invent new colors.** Use existing tokens or `oklch()` adjustments of them.
 
-### 公益页 (`causes.html`)
-- 性别平等倡导
-- 屠宰场动物权益议题
+### Typography
+- **Newsreader** (variable serif, Google Fonts) — everything readable. Use italic for emphasis. Headings are weight 400 with negative letter-spacing.
+- **JetBrains Mono** (Google Fonts) — small UPPERCASE labels: nav, dates, eyebrows, button text.
+- No system fonts, no Inter, no Roboto.
 
----
+### Visual rules
+- Italic `<em>` inside a heading is colored `var(--accent)` — that's the only flourish on titles.
+- "Eyebrow" labels use the `.eyebrow` class: small mono uppercase, optionally with a `<span class="dot">` (4px terracotta dot).
+- Buttons are pill-shaped (`border-radius: 999px`) with monospace labels. Two variants: `.btn` (outline) and `.btn-primary` (filled ink → terracotta on hover).
+- Books in the Portfolio use real cover images with soft shadows — no card backgrounds.
+- Section headers are h2 only — no "Section 01" prefixes, no "N° 01" item numbers (we deliberately removed these).
 
-## 本地开发
+### Layout
+- Max content width is 1240px (`--maxw`), gutter is `clamp(1.5rem, 4vw, 3.5rem)`.
+- Editorial section heads: `.sec-head` with a single h2.
+- Asymmetric grids preferred over centered ones.
 
-### 查看网站
-无需构建步骤，直接用浏览器打开 `index.html`，或启动本地服务器：
+## Conventions
 
+### Adding a new blog post
+1. Create `blogs/<slug>-post.html` — copy `blogs/introvert-life-post.html` as a template; keep the same `<header class="topbar">`, font links, and `<footer class="site-foot">`.
+2. Add a new `<li>` at the **top** of the `<ul class="post-list">` in `blog.html`. Match the existing shape exactly:
+   ```html
+   <li><a class="post-link" href="blogs/your-slug-post.html"
+          data-cat="Essays|Books|Film|Game"
+          data-date="MMM D YYYY">
+       <span class="pdate">MMM D YYYY</span>
+       <span class="pmeta">
+         <span class="ptitle">Title with original emoji if any</span>
+         <span class="pblurb">One-line description.</span>
+       </span>
+       <span class="parrow">→</span>
+   </a></li>
+   ```
+3. `data-cat` controls both the category tag above the title and which TOC group it appears in. Valid values:
+   - `Essays` → "Other Thoughts"
+   - `Books` → "Book Reviews"
+   - `Film` → "Movie Reviews"
+   - `Game` → "Game Reviews"
+4. External links (WeChat articles) use `target="_blank" rel="noopener"` and the arrow becomes `↗`.
+
+### Adding a new book to the Portfolio
+Edit the `.portfolio-grid` in `index.html`. Use an `<a class="book">` with a `.cover img`, `.meta` (h3 + `.kind` label), and a `<p>` blurb. Cover image goes in `images/` as a JPG.
+
+### Nav menu
+Six fixed items, same on every page. If you add a page, add a `<li>` to ALL of: `index.html`, `blog.html`, `causes.html`, and every file in `blogs/`. The mobile hamburger script handles itself.
+
+### Editing copy
+Keep the existing voice — Situ wrote it. Don't rewrite or "polish" her words unless asked. Common pitfalls:
+- Original titles use Title Case (e.g. "The Problem With Disney - Part 1") — preserve them.
+- Original blurbs sometimes have typos or unusual phrasing — leave them unless told to fix.
+- Some titles have leading 📚 / 🎬 emojis — keep them, they're meaningful (book vs. film review).
+
+## Things to avoid
+
+- ❌ Adding "filler" sections, fake stats, or motivational copy
+- ❌ Reintroducing card backgrounds, drop shadows on text blocks, or "Section 0X" labels
+- ❌ Inventing icons via SVG — use real images from `images/` or skip the icon entirely
+- ❌ Using free-picker colors — always reference a CSS token
+- ❌ Switching fonts — Newsreader + JetBrains Mono only
+
+## Mobile
+
+Already hardened. Breakpoints: 860px (collapse multi-column layouts), 640px (hamburger nav + tighter type + iOS-zoom-safe inputs), 380px (single-column hero stats). If adding new layouts, test in DevTools mobile mode and keep tap targets ≥44px.
+
+## Integrations (don't break these)
+
+- **Contact form** posts to `https://formsubmit.co/6801b45c05adfe30e7b50c80215cde66` — don't change the action URL.
+- **WeChat QR**: `images/wechat-qr.bmp` (legacy BMP) with PNG fallback. Opened via modal on the contact section.
+- **Flag Counter**: image tag in the contact section pointing at `s05.flagcounter.com/count2/JUr8/...` — passive, no JS.
+- **Amazon author store**: `https://www.amazon.com/stores/Situ-Chen/author/B0CFJXGN7V`
+- **Linktree**: `https://linktr.ee/situchen`
+- **Book Amazon links**: hard-coded `https://a.co/d/...` short URLs per book — don't regenerate.
+
+## Quick local preview
+
+No server needed. Open `index.html` directly in a browser, OR for relative-path correctness:
 ```bash
-# Python
-python -m http.server 8000
-
-# Node.js
-npx http-server
+python3 -m http.server 8000
+# then visit http://localhost:8000
 ```
 
-### 运行测试
-```bash
-cd tests
-npm install              # 安装依赖
-npx playwright install   # 安装浏览器（首次需要）
-npm test                 # 运行全部测试
-npm run test:headed      # 显示浏览器窗口运行
-npm run test:ui          # 交互式 UI 模式
-npm run test:debug       # 调试模式
-```
+## Deploy
 
-> 测试配置：Playwright，仅 Chromium，视口 1280×720，超时 30 秒。
-
----
-
-## 常见开发任务
-
-### 新增博文
-1. 在 `blogs/` 下创建新 HTML 文件（参考现有博文结构）
-2. 在 `blog.html` 的目录列表中添加对应链接
-3. 如有配套图片，添加到 `images/` 目录
-
-### 修改样式
-- 快速修改：直接编辑 `assets/css/main.css`
-- 主题色（珊瑚红）：`#e44c65`
-- 响应式断点：`xlarge` / `large` / `medium` / `small`
-
-### 更新主页内容
-- 编辑 `index.html` 对应区块（Hero、Work、Portfolio、Contact）
-
-### 部署
-- 推送到 GitHub `master` 分支即可自动发布（GitHub Pages）
-
----
-
-## 品牌与风格
-
-- **风格定位**：简洁、文艺、个人化
-- **主色调**：珊瑚红 `#e44c65`，背景浅灰/白
-- **字体**：Open Sans（正文），无衬线
-- **内容语言**：中英文混合（部分博文为中文，部分为英文）
-- **作者域名**：[situchen.me](https://situchen.me)
-
----
-
-## Git 分支规范
-
-- 主分支：`master`（直接对应 GitHub Pages 发布）
-- 功能/修改分支：`claude/<描述>-<session-id>`
-- 推送命令：`git push -u origin <branch-name>`
+GitHub Pages auto-deploys on push to `main`. The `CNAME` file pins the custom domain `situchen.me`.

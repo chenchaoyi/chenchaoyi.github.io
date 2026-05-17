@@ -1,657 +1,305 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Blog - Situ E. Chen</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <style>
-            .blog-post {
-                margin-bottom: 1.5em; /* Reduced from default spacing */
-            }
-            .blog-post .button {
-                margin-bottom: 0; /* Remove bottom margin after the button */
-            }
-            .blog-post.box {
-                padding-bottom: 1em; /* Reduce internal bottom padding of the box */
-            }
-            .pagination a {
-                color: #484848;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-            
-            .pagination a:hover {
-                color: #e44c65;
-            }
-            
-            .pagination .disabled {
-                opacity: 0.5;
-                pointer-events: none;
-            }
-            
-            #page-info {
-                display: inline-block;
-                vertical-align: middle;
-            }
-            .toc-category {
-                margin-bottom: 1em;
-            }
-            
-            .category-header {
-                cursor: pointer;
-                font-weight: bold;
-                margin-bottom: 0.5em;
-                color: #484848;
-            }
-            
-            .category-header:hover {
-                color: #e44c65;
-            }
-            
-            .toggle-icon {
-                display: inline-block;
-                width: 1em;
-                transition: transform 0.3s;
-            }
-            
-            .category-title {
-                margin-left: 0.5em;
-            }
-            
-            .post-count {
-                font-size: 0.9em;
-                color: #666;
-                margin-left: 0.5em;
-            }
-            
-            .category-content {
-                margin-left: 1.5em;
-                display: none;
-                padding-right: 0.5em;
-                max-height: 400px;
-                overflow-y: auto;
-            }
-            
-            .category-content a {
-                display: block;
-                padding: 0.8em 0;
-                text-decoration: none;
-                border-bottom: 1px solid rgba(0,0,0,0.05);
-            }
-            
-            .category-content a:last-child {
-                border-bottom: none;
-            }
-            
-            .post-entry {
-                display: flex;
-                flex-direction: column;
-                gap: 0.3em;
-            }
-            
-            .post-title {
-                color: #484848;
-                line-height: 1.3;
-            }
-            
-            .post-date {
-                color: #888;
-                font-size: 0.85em;
-            }
-            
-            .category-content a:hover .post-title {
-                color: #e44c65;
-            }
-            
-            .category-content {
-                margin-left: 1.5em;
-                display: none;
-                padding-right: 0.5em;
-                max-height: 400px;
-                overflow-y: auto;
-            }
-            
-            .toc-category.expanded .toggle-icon {
-                transform: rotate(-90deg);
-            }
-        </style>
-    </head>
-    <body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Journal — Situ E. Chen</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="container">
-                <li><a href="index.html#top">Top</a></li>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="index.html#portfolio">Portfolio</a></li>
-                <li><a class="active" href="blog.html">Blog</a></li>
-                <li><a href="causes.html">Things I Care About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-name">
+                    <span class="brand-en">Situ E. Chen</span>
+                    <span class="mono">situchen.me</span>
+                </span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html#top">Top</a></li>
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="causes.html">Things I Care About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+            </nav>
+        </div>
+    </header>
 
-        <!-- Blog -->
-        <article id="blog" class="wrapper style2">
-            <div class="container">
-                <header style="margin-bottom: 1em;">
-                    <h2>My Blog</h2>
-                    <p>Thoughts on writing, illustration, and creative journey</p>
-                </header>
-                
-                <div class="row">
-                    <!-- Blog Posts -->
-                    <div class="col-8 col-12-medium">
-                        <!-- Blog Posts -->
-                        <div id="blog-posts">
-                            <article id="post-philosophy-religion-cults" class="box style1 blog-post">
-                                <h3>Wherever Philosophy Takes You (part 1: religion & cults)</h3>
-                                <p class="post-meta">Posted on October 2025</p>
-                                <p>A spontaneous discussion on philosophy topics that I love</p>
-                                <a href="blogs/philosophy-religion-cults-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+    <main>
+        <!-- Page head -->
+        <section class="page-head">
+            <div class="wrap">
+                <div class="eyebrow"><span class="dot"></span>The Journal &nbsp;·&nbsp; Essays, reviews, asides</div>
+                <h1>Thoughts on <em>writing</em>, <em>illustration</em>, and the creative journey.</h1>
+                <p class="lede">Long-form essays, book and movie reviews, and the occasional poem — a record of what I've been reading, watching, and turning over in my head.</p>
+            </div>
+        </section>
 
-                            <article id="post-social-media-literature" class="box style1 blog-post">
-                                <h3>The Impact Of Social Media on Modern Literature: Is it worth it?</h3>
-                                <p class="post-meta">Posted on August 2025</p>
-                                <p>An analysis on the downfall of modern literature</p>
-                                <a href="blogs/social-media-literature-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+        <!-- Blog list + sidebar -->
+        <section style="padding-bottom: clamp(4rem, 8vw, 7rem);">
+            <div class="wrap">
+                <div class="blog-layout">
+                    <div>
+                        <ul class="post-list" id="post-list">
+                            <li><a class="post-link" href="blogs/philosophy-religion-cults-post.html" data-cat="Essays" data-date="Oct 2025"><span class="pdate">Oct 2025</span><span class="pmeta"><span class="ptitle">Wherever Philosophy Takes You (part 1: religion &amp; cults)</span><span class="pblurb">A spontaneous discussion on philosophy topics that I love</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-crystal-want-writing" class="box style1 blog-post">
-                                <h3>Of Crystal, Want and Writing</h3>
-                                <p class="post-meta">Posted on June 2025</p>
-                                <p>A brief essay on why I think we write</p>
-                                <a href="blogs/crystal-want-writing-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/social-media-literature-post.html" data-cat="Essays" data-date="Aug 2025"><span class="pdate">Aug 2025</span><span class="pmeta"><span class="ptitle">The Impact Of Social Media on Modern Literature: Is it worth it?</span><span class="pblurb">An analysis on the downfall of modern literature</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-disney-problems-2" class="box style1 blog-post">
-                                <h3>Disney: Salvageable or Spineless?</h3>
-                                <p class="post-meta">Posted on June 2025</p>
-                                <p>Exploring Disney's teeth-grinding issues Part 2</p>
-                                <a href="blogs/disney-problems-post-2.html" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/crystal-want-writing-post.html" data-cat="Essays" data-date="Jun 2025"><span class="pdate">Jun 2025</span><span class="pmeta"><span class="ptitle">Of Crystal, Want and Writing</span><span class="pblurb">A brief essay on why I think we write</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-disney-problems" class="box style1 blog-post">
-                                <h3>The Problem With Disney - Part 1</h3>
-                                <p class="post-meta">Posted on May 2025</p>
-                                <p>Exploring Disney's teeth-grinding issues Part 1</p>
-                                <a href="blogs/disney-problems-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/disney-problems-post-2.html" data-cat="Essays" data-date="Jun 2025"><span class="pdate">Jun 2025</span><span class="pmeta"><span class="ptitle">Disney: Salvageable or Spineless?</span><span class="pblurb">Exploring Disney's teeth-grinding issues Part 2</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-slaughterhouse-animal-abuse" class="box style1 blog-post">
-                                <h3>Slaughterhouse Animal Abuse: They Suffer</h3>
-                                <p class="post-meta">Posted on May 2025</p>
-                                <p>A speech script on slaughterhouses animal abuse</p>
-                                <a href="blogs/slaughterhouse-animal-abuse-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/disney-problems-post.html" data-cat="Essays" data-date="May 2025"><span class="pdate">May 2025</span><span class="pmeta"><span class="ptitle">The Problem With Disney - Part 1</span><span class="pblurb">Exploring Disney's teeth-grinding issues Part 1</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-introvert-life" class="box style1 blog-post">
-                                <h3>An Introvert's Life: A Journey Beyond Words</h3>
-                                <p class="post-meta">Posted on April 25, 2025</p>
-                                <p>My perception of introversion, as an introvert</p>
-                                <a href="blogs/introvert-life-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/slaughterhouse-animal-abuse-post.html" data-cat="Essays" data-date="May 2025"><span class="pdate">May 2025</span><span class="pmeta"><span class="ptitle">Slaughterhouse Animal Abuse: They Suffer</span><span class="pblurb">A speech script on slaughterhouses animal abuse</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-infinite" class="box style1 blog-post">
-                                <h3>Where Is The Infinite</h3>
-                                <p class="post-meta">Posted on April 3, 2025</p>
-                                <p>Extra: A Poem about Skies and Beyond</p>
-                                <a href="blogs/infinite-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/introvert-life-post.html" data-cat="Essays" data-date="Apr 25 2025"><span class="pdate">Apr 25 2025</span><span class="pmeta"><span class="ptitle">An Introvert's Life: A Journey Beyond Words</span><span class="pblurb">My perception of introversion, as an introvert</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-coda" class="box style1 blog-post">
-                                <h3>🎬 A Musical Girl Finding Her Voice Among A Deaf Family</h3>
-                                <p class="post-meta">Posted on March 15, 2025</p>
-                                <p>A movie review of <i><b style="color: #3498db">CODA</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/4qwsVS5lALW2lLLcD18JGw" class="button small" target="_blank">Read More</a>
-                            </article>
-                            
-                            <article id="post-introvert" class="box style1 blog-post">
-                                <h3>Being An Introvert</h3>
-                                <p class="post-meta">Posted on March 14, 2025</p>
-                                <p>Extra: a three-comic-strip collection about introversion</p>
-                                <a href="blogs/introvert-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/infinite-post.html" data-cat="Essays" data-date="Apr 3 2025"><span class="pdate">Apr 3 2025</span><span class="pmeta"><span class="ptitle">Where Is The Infinite</span><span class="pblurb">Extra: A Poem about Skies and Beyond</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-chimes" class="box style1 blog-post">
-                                <h3>Chimes</h3>
-                                <p class="post-meta">Posted on March 9, 2025</p>
-                                <p>A Poem I Wrote</p>
-                                <a href="blogs/chimes-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
-                            
-                            <article id="post-boxers-saints" class="box style1 blog-post">
-                                <h3>📚 Two Faces Of The Boxer Rebellion</h3>
-                                <p class="post-meta">Posted on March 8, 2025</p>
-                                <p>A book review of <i><b style="color: #3498db">Boxers</b></i> and <i><b style="color: #3498db">Saints</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/GsJrMSgtojm47FBNOw_wQA" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/4qwsVS5lALW2lLLcD18JGw" target="_blank" rel="noopener" data-cat="Film" data-date="Mar 15 2025"><span class="pdate">Mar 15 2025</span><span class="pmeta"><span class="ptitle">🎬 A Musical Girl Finding Her Voice Among A Deaf Family</span><span class="pblurb">A movie review of <i><b style="color: #3498db">CODA</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-the-father" class="box style1 blog-post">
-                                <h3>🎬 A Father Who Became One With His Past</h3>
-                                <p class="post-meta">Posted on February 20, 2025</p>
-                                <p>A movie review of <i><b style="color: #3498db">The Father</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/JdxTKRKd9am0nXyZX3wiHA" class="button small" target="_blank">Read More</a>
-                            </article>
-                            
-                            <article id="post-coraline" class="box style1 blog-post">
-                                <h3>📚🎬 A Mirrored World Of Reality And Dreams</h3>
-                                <p class="post-meta">Posted on February 10, 2025</p>
-                                <p>A book and movie review of <i><b style="color: #3498db">Coraline</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/JT-Qf_JwGFNKzBBjZ3O3Hg" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/introvert-post.html" data-cat="Essays" data-date="Mar 14 2025"><span class="pdate">Mar 14 2025</span><span class="pmeta"><span class="ptitle">Being An Introvert</span><span class="pblurb">Extra: a three-comic-strip collection about introversion</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-digital-illustration" class="box style1 blog-post">
-                                <h3>My Journey into Digital Illustration</h3>
-                                <p class="post-meta">Posted on January 27, 2025</p>
-                                <p>As I experience with new styles and forms of art, one important journey is my transition from tradional hand-drawing to Ipad digital drawing. I hope that by learning this new form of art, the visual impact of my stories will be improved...</p>
-                                <a href="blogs/digital-illustration-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/chimes-post.html" data-cat="Essays" data-date="Mar 9 2025"><span class="pdate">Mar 9 2025</span><span class="pmeta"><span class="ptitle">Chimes</span><span class="pblurb">A Poem I Wrote</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-olivias-chapter" class="box style1 blog-post">
-                                <h3>Behind the Scenes: Writing Olivia's Chapter</h3>
-                                <p class="post-meta">Posted on January 25, 2025</p>
-                                <p>Writing about a young author's journey has been both challenging and deeply personal. Here's a peek into my writing process! I started with the inspiration to craft a realistic fiction novel about a girl's complex relationship with her father, but discovered a deeper story about pursuing dreams and personal growth...</p>
-                                <a href="blogs/olivias-chapter-post.html" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/GsJrMSgtojm47FBNOw_wQA" target="_blank" rel="noopener" data-cat="Books" data-date="Mar 8 2025"><span class="pdate">Mar 8 2025</span><span class="pmeta"><span class="ptitle">📚 Two Faces Of The Boxer Rebellion</span><span class="pblurb">A book review of <i><b style="color: #3498db">Boxers</b></i> and <i><b style="color: #3498db">Saints</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-all-quotes" class="box style1 blog-post">
-                                <h3>All Quotes I Love</h3>
-                                <p class="post-meta">Posted on January 22, 2025</p>
-                                <p>A collection of quotes that I love</p>
-                                <a href="https://mp.weixin.qq.com/s/JHkwRzScEaVaiZn9eROWXQ" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/JdxTKRKd9am0nXyZX3wiHA" target="_blank" rel="noopener" data-cat="Film" data-date="Feb 20 2025"><span class="pdate">Feb 20 2025</span><span class="pmeta"><span class="ptitle">🎬 A Father Who Became One With His Past</span><span class="pblurb">A movie review of <i><b style="color: #3498db">The Father</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-idea-to-creation" class="box style1 blog-post">
-                                <h3>Idea To Creation: A Writer's Journey</h3>
-                                <p class="post-meta">Posted on January 20, 2025</p>
-                                <p>Every writer's journey begins with a single idea. In this post, I'll share my personal experience of transforming initial story concepts into fully-realized narratives. From the first spark of inspiration to the final draft, I'll discuss my creative process, the challenges faced, and the lessons learned along the way.</p>
-                                <a href="https://mp.weixin.qq.com/s/faRPdNUwCTLCdlkTfANQJQ" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/JT-Qf_JwGFNKzBBjZ3O3Hg" target="_blank" rel="noopener" data-cat="Books" data-date="Feb 10 2025"><span class="pdate">Feb 10 2025</span><span class="pmeta"><span class="ptitle">📚🎬 A Mirrored World Of Reality And Dreams</span><span class="pblurb">A book and movie review of <i><b style="color: #3498db">Coraline</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-moana2" class="box style1 blog-post">
-                                <h3>🎬 Evil Coconuts, A Chicken, A Pig And An Island</h3>
-                                <p class="post-meta">Posted on January 2, 2025</p>
-                                <p>A movie review of <i><b style="color: #3498db">Moana 2</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/6T0xizWDtwae_VSMbj4RiQ" class="button small" target="_blank">Read More</a>
-                            </article>
-                            
-                            <article id="post-all-quotes" class="box style1 blog-post">
-                                <h3>Life</h3>
-                                <p class="post-meta">Posted on January 1, 2025</p>
-                                <p>A poem I wrote</p>
-                                <a href="https://mp.weixin.qq.com/s/bIq1cZ9OK7_6NKTbXwoBKw" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/digital-illustration-post.html" data-cat="Essays" data-date="Jan 27 2025"><span class="pdate">Jan 27 2025</span><span class="pmeta"><span class="ptitle">My Journey into Digital Illustration</span><span class="pblurb">As I experience with new styles and forms of art, one important journey is my transition from tradional hand-drawing to Ipad digital drawing. I hope that by learning this new form of art, the visual impact of my stories will be improved...</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-magic-hp" class="box style1 blog-post">
-                                <h3>📚 I Can't Take My Eyes Off This Magic Book !!!</h3>
-                                <p class="post-meta">Posted on December 25, 2024</p>
-                                <p>A book review of the <i><b style="color: #3498db">Harry Potter series</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/c8YXbUhdY7gnhGfiGNWbxg" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="blogs/olivias-chapter-post.html" data-cat="Essays" data-date="Jan 25 2025"><span class="pdate">Jan 25 2025</span><span class="pmeta"><span class="ptitle">Behind the Scenes: Writing Olivia's Chapter</span><span class="pblurb">Writing about a young author's journey has been both challenging and deeply personal. Here's a peek into my writing process! I started with the inspiration to craft a realistic fiction novel about a girl's complex relationship with her father, but discovered a deeper story about pursuing dreams and personal growth...</span></span><span class="parrow">→</span></a></li>
 
-                            <article id="post-princess-diary" class="box style1 blog-post">
-                                <h3>🎬 A Disney Dream Comes True</h3>
-                                <p class="post-meta">Posted on December 16, 2024</p>
-                                <p>A movie review of <i><b style="color: #3498db">The Princess Diary</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/YyoeGB-4fjBonltK-HWt9A" class="button small" target="_blank">Read More</a>
-                            </article>
-                            
-                            <article id="post-and-then-there-were-none" class="box style1 blog-post">
-                                <h3>🎬 Ten People. Ten Crimes. And One Big Killing Game.</h3>
-                                <p class="post-meta">Posted on November 29, 2024</p>
-                                <p>A movie review of <i><b style="color: #3498db">And Then There Were None</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/Gr0gqL1XR3eKSgSDORL0CA" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/JHkwRzScEaVaiZn9eROWXQ" target="_blank" rel="noopener" data-cat="Essays" data-date="Jan 22 2025"><span class="pdate">Jan 22 2025</span><span class="pmeta"><span class="ptitle">All Quotes I Love</span><span class="pblurb">A collection of quotes that I love</span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-kids-read" class="box style1 blog-post">
-                                <h3>📚 Brief Book Reviews From The Kids Read Booklist</h3>
-                                <p class="post-meta">Posted on November 17, 2024</p>
-                                <p>A book review of the <i><b style="color: #3498db">The Last Comics On Earth, The Night War, Summer at Squee, Things in the Basement and Project F</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/m4ZpwzTe26x18vJoMPeBaw" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/faRPdNUwCTLCdlkTfANQJQ" target="_blank" rel="noopener" data-cat="Essays" data-date="Jan 20 2025"><span class="pdate">Jan 20 2025</span><span class="pmeta"><span class="ptitle">Idea To Creation: A Writer's Journey</span><span class="pblurb">Every writer's journey begins with a single idea. In this post, I'll share my personal experience of transforming initial story concepts into fully-realized narratives. From the first spark of inspiration to the final draft, I'll discuss my creative process, the challenges faced, and the lessons learned along the way.</span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-rosie-frost" class="box style1 blog-post">
-                                <h3>📚 Island of Endangered, Game of Worthy, Girl of Determination</h3>
-                                <p class="post-meta">Posted on November 10, 2024</p>
-                                <p>A book review of the <i><b style="color: #3498db">Rosie Frost and The Falcon Queen</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/QpP2GH6SgD6sacVDMiQAeA" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/6T0xizWDtwae_VSMbj4RiQ" target="_blank" rel="noopener" data-cat="Film" data-date="Jan 2 2025"><span class="pdate">Jan 2 2025</span><span class="pmeta"><span class="ptitle">🎬 Evil Coconuts, A Chicken, A Pig And An Island</span><span class="pblurb">A movie review of <i><b style="color: #3498db">Moana 2</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-thoughts-on-god" class="box style1 blog-post">
-                                <h3>My Thoughts On God</h3>
-                                <p class="post-meta">Posted on November 2, 2024</p>
-                                <p>A follow up to <i><b style="color: #3498db">The Book Review of Philosophy: An Encyclopedia</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/u5VFNeDQbdPorUJr_UyVqA" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/bIq1cZ9OK7_6NKTbXwoBKw" target="_blank" rel="noopener" data-cat="Essays" data-date="Jan 1 2025"><span class="pdate">Jan 1 2025</span><span class="pmeta"><span class="ptitle">Life</span><span class="pblurb">A Poem I Wrote</span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-one" class="box style1 blog-post">
-                                <h3>📚 Two Sisters, A Connection, A Separation, And A Changed Life</h3>
-                                <p class="post-meta">Posted on October 27, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">One</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/cWAqQ6RqiHyn3aRqXozRYg" class="button small" target="_blank">Read More</a>
-                            </article>
-                            
-                            <article id="post-fish-in-a-tree" class="box style1 blog-post">
-                                <h3>📚 An Inspiring Journey Of Mentorship and Friendship</h3>
-                                <p class="post-meta">Posted on October 18, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Fish in a Tree</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/FK2o2c4cZdn99RrbLTNryQ" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/c8YXbUhdY7gnhGfiGNWbxg" target="_blank" rel="noopener" data-cat="Books" data-date="Dec 25 2024"><span class="pdate">Dec 25 2024</span><span class="pmeta"><span class="ptitle">📚 I Can't Take My Eyes Off This Magic Book !!!</span><span class="pblurb">A book review of the <i><b style="color: #3498db">Harry Potter series</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-dead-poet-society" class="box style1 blog-post">
-                                <h3>🎬 A Heartbreaking Story About Truth And The World</h3>
-                                <p class="post-meta">Posted on October 10, 2024</p>
-                                <p>A movie review of <i><b style="color: #3498db">Dead Poets Society</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/46RL1W1tHHLJD0W-5iiXyA" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/YyoeGB-4fjBonltK-HWt9A" target="_blank" rel="noopener" data-cat="Film" data-date="Dec 16 2024"><span class="pdate">Dec 16 2024</span><span class="pmeta"><span class="ptitle">🎬 A Disney Dream Comes True</span><span class="pblurb">A movie review of <i><b style="color: #3498db">The Princess Diary</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-spilling-ink" class="box style1 blog-post">
-                                <h3>📚 Molding Meaningful Manuscripts</h3>
-                                <p class="post-meta">Posted on September 28, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Spilling Ink</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/D1G2oeDo3m5B8AmE1vvgFQ" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/Gr0gqL1XR3eKSgSDORL0CA" target="_blank" rel="noopener" data-cat="Film" data-date="Nov 29 2024"><span class="pdate">Nov 29 2024</span><span class="pmeta"><span class="ptitle">🎬 Ten People. Ten Crimes. And One Big Killing Game.</span><span class="pblurb">A movie review of <i><b style="color: #3498db">And Then There Were None</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-the-golden-age" class="box style1 blog-post">
-                                <h3>📚 A Cruel World Separated By Class</h3>
-                                <p class="post-meta">Posted on September 26, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">The Golden Age, book 1</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/Wg4xaK1XP8TyrqIsTe8z1A" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/m4ZpwzTe26x18vJoMPeBaw" target="_blank" rel="noopener" data-cat="Books" data-date="Nov 17 2024"><span class="pdate">Nov 17 2024</span><span class="pmeta"><span class="ptitle">📚 Brief Book Reviews From The Kids Read Booklist</span><span class="pblurb">A book review of the <i><b style="color: #3498db">The Last Comics On Earth, The Night War, Summer at Squee, Things in the Basement and Project F</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-lean-in" class="box style1 blog-post">
-                                <h3>📚 An Enlightenment Of Women's Rights In Workplace</h3>
-                                <p class="post-meta">Posted on September 19, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Lean In</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/TxSVujW8i7gBJCGF4bMapg" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/QpP2GH6SgD6sacVDMiQAeA" target="_blank" rel="noopener" data-cat="Books" data-date="Nov 10 2024"><span class="pdate">Nov 10 2024</span><span class="pmeta"><span class="ptitle">📚 Island of Endangered, Game of Worthy, Girl of Determination</span><span class="pblurb">A book review of the <i><b style="color: #3498db">Rosie Frost and The Falcon Queen</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-the-book-thief" class="box style1 blog-post">
-                                <h3>📚 A Heartbreaking Story From Death</h3>
-                                <p class="post-meta">Posted on September 9, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">The Book Thief</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/_tE2IdKVDi3AoEhaLaw0zw" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/u5VFNeDQbdPorUJr_UyVqA" target="_blank" rel="noopener" data-cat="Essays" data-date="Nov 2 2024"><span class="pdate">Nov 2 2024</span><span class="pmeta"><span class="ptitle">My Thoughts On God</span><span class="pblurb">A follow up to <i><b style="color: #3498db">The Book Review of Philosophy: An Encyclopedia</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-rising-melodies" class="box style1 blog-post">
-                                <h3>📚 A Young Maid Fulfilling Her Dream As A Singer</h3>
-                                <p class="post-meta">Posted on August 26, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Rising Melodies</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/K-ZL4Go2y066n6ZAKQFQAg" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/cWAqQ6RqiHyn3aRqXozRYg" target="_blank" rel="noopener" data-cat="Books" data-date="Oct 27 2024"><span class="pdate">Oct 27 2024</span><span class="pmeta"><span class="ptitle">📚 Two Sisters, A Connection, A Separation, And A Changed Life</span><span class="pblurb">A book review of <i><b style="color: #3498db">One</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-the-giver" class="box style1 blog-post">
-                                <h3>📚 The Haunting Community Drained of Color and Emotions</h3>
-                                <p class="post-meta">Posted on August 21, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">The Giver</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/WsU5OR2mTw9KpLAdxKIXPA" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/FK2o2c4cZdn99RrbLTNryQ" target="_blank" rel="noopener" data-cat="Books" data-date="Oct 18 2024"><span class="pdate">Oct 18 2024</span><span class="pmeta"><span class="ptitle">📚 An Inspiring Journey Of Mentorship and Friendship</span><span class="pblurb">A book review of <i><b style="color: #3498db">Fish in a Tree</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-childrens-books" class="box style1 blog-post">
-                                <h3>My Overall Suggestions and Thoughts on Children's Books</h3>
-                                <p class="post-meta">Posted on August 13, 2024</p>
-                                <p>An Overview of Children's Literature</p>
-                                <a href="https://mp.weixin.qq.com/s/j_hN7K7cFI8M652J9Usryw" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/46RL1W1tHHLJD0W-5iiXyA" target="_blank" rel="noopener" data-cat="Film" data-date="Oct 10 2024"><span class="pdate">Oct 10 2024</span><span class="pmeta"><span class="ptitle">🎬 A Heartbreaking Story About Truth And The World</span><span class="pblurb">A movie review of <i><b style="color: #3498db">Dead Poets Society</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-absolutely-true" class="box style1 blog-post">
-                                <h3>📚 An Indian Boy In A White School</h3>
-                                <p class="post-meta">Posted on August 9, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">The Absolutely True Diary of a Part-time Indian</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/htVtJDvc0IY_Daz_rgA8kw" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/D1G2oeDo3m5B8AmE1vvgFQ" target="_blank" rel="noopener" data-cat="Books" data-date="Sep 28 2024"><span class="pdate">Sep 28 2024</span><span class="pmeta"><span class="ptitle">📚 Molding Meaningful Manuscripts</span><span class="pblurb">A book review of <i><b style="color: #3498db">Spilling Ink</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-smile" class="box style1 blog-post">
-                                <h3>📚 A Teenager Growing Up Along With Her Dental Drama</h3>
-                                <p class="post-meta">Posted on July 22, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Smile</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/-83lQdjjJ3UbPoEoJlbV_g" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/Wg4xaK1XP8TyrqIsTe8z1A" target="_blank" rel="noopener" data-cat="Books" data-date="Sep 26 2024"><span class="pdate">Sep 26 2024</span><span class="pmeta"><span class="ptitle">📚 A Cruel World Separated By Class</span><span class="pblurb">A book review of <i><b style="color: #3498db">The Golden Age, book 1</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-lola-rose" class="box style1 blog-post">
-                                <h3>📚 A Name Change to Escape Abuse</h3>
-                                <p class="post-meta">Posted on July 18, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Lola Rose</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/4lVfqhwB6YN42guCkUopQQ" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/TxSVujW8i7gBJCGF4bMapg" target="_blank" rel="noopener" data-cat="Books" data-date="Sep 19 2024"><span class="pdate">Sep 19 2024</span><span class="pmeta"><span class="ptitle">📚 An Enlightenment Of Women's Rights In Workplace</span><span class="pblurb">A book review of <i><b style="color: #3498db">Lean In</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-the-hunger-games" class="box style1 blog-post">
-                                <h3>📚 A Game of Life, Death, and Survival</h3>
-                                <p class="post-meta">Posted on July 9, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">The Hunger Games</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/06iT3TIr-OSLD8D02K-iKw" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/_tE2IdKVDi3AoEhaLaw0zw" target="_blank" rel="noopener" data-cat="Books" data-date="Sep 9 2024"><span class="pdate">Sep 9 2024</span><span class="pmeta"><span class="ptitle">📚 A Heartbreaking Story From Death</span><span class="pblurb">A book review of <i><b style="color: #3498db">The Book Thief</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-moonrise" class="box style1 blog-post">
-                                <h3>📚 The Raw, Heartbreaking Story Of Loss And Injustice</h3>
-                                <p class="post-meta">Posted on July 5, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Moonrise</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/MQdKI2Tx4naP7pnMApmhIQ" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/K-ZL4Go2y066n6ZAKQFQAg" target="_blank" rel="noopener" data-cat="Books" data-date="Aug 26 2024"><span class="pdate">Aug 26 2024</span><span class="pmeta"><span class="ptitle">📚 A Young Maid Fulfilling Her Dream As A Singer</span><span class="pblurb">A book review of <i><b style="color: #3498db">Rising Melodies</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-roller-girl" class="box style1 blog-post">
-                                <h3>📚 A Girl's Journey of Rolling, Crashing, Bumping, and Growing</h3>
-                                <p class="post-meta">Posted on July 2, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Roller Girl</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/nq1p2bQoEG4NGd8eflEXog" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/WsU5OR2mTw9KpLAdxKIXPA" target="_blank" rel="noopener" data-cat="Books" data-date="Aug 21 2024"><span class="pdate">Aug 21 2024</span><span class="pmeta"><span class="ptitle">📚 The Haunting Community Drained of Color and Emotions</span><span class="pblurb">A book review of <i><b style="color: #3498db">The Giver</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-little-miss-sunshine" class="box style1 blog-post">
-                                <h3>🎬 A Heartwarming Road Trip of an Imperfect Family</h3>
-                                <p class="post-meta">Posted on June 30, 2024</p>
-                                <p>A movie review of <i><b style="color: #3498db">Little Miss Sunshine</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/-x5X6PCZ-Z6AC9_c8PfA-w" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/j_hN7K7cFI8M652J9Usryw" target="_blank" rel="noopener" data-cat="Essays" data-date="Aug 13 2024"><span class="pdate">Aug 13 2024</span><span class="pmeta"><span class="ptitle">My Overall Suggestions and Thoughts on Children's Books</span><span class="pblurb">An Overview of Children's Literature</span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-gone-girl" class="box style1 blog-post">
-                                <h3>🎬 A Cunning, Ruthless Woman Faking Her Own Death</h3>
-                                <p class="post-meta">Posted on June 29, 2024</p>
-                                <p>A movie review of <i><b style="color: #3498db">Gone Girl</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/RdUWakswvyTauH-X0mIz8Q" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/htVtJDvc0IY_Daz_rgA8kw" target="_blank" rel="noopener" data-cat="Books" data-date="Aug 9 2024"><span class="pdate">Aug 9 2024</span><span class="pmeta"><span class="ptitle">📚 An Indian Boy In A White School</span><span class="pblurb">A book review of <i><b style="color: #3498db">The Absolutely True Diary of a Part-time Indian</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-inside-out-2" class="box style1 blog-post">
-                                <h3>🎬 The Wholesome Stereotype</h3>
-                                <p class="post-meta">Posted on June 27, 2024</p>
-                                <p>A movie review of <i><b style="color: #3498db">Inside Out 2</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/gMPrgRJFDeEQAIzha9BeMg" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/-83lQdjjJ3UbPoEoJlbV_g" target="_blank" rel="noopener" data-cat="Books" data-date="Jul 22 2024"><span class="pdate">Jul 22 2024</span><span class="pmeta"><span class="ptitle">📚 A Teenager Growing Up Along With Her Dental Drama</span><span class="pblurb">A book review of <i><b style="color: #3498db">Smile</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-philosophy" class="box style1 blog-post">
-                                <h3>📚 The Mysterious Minds' Operations With The Universe</h3>
-                                <p class="post-meta">Posted on June 26, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Philosophy, A Visual Encyclopedia</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/rbBUaGYc4X1Um9G7VPggYQ" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/4lVfqhwB6YN42guCkUopQQ" target="_blank" rel="noopener" data-cat="Books" data-date="Jul 18 2024"><span class="pdate">Jul 18 2024</span><span class="pmeta"><span class="ptitle">📚 A Name Change to Escape Abuse</span><span class="pblurb">A book review of <i><b style="color: #3498db">Lola Rose</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-louder-than-hunger" class="box style1 blog-post">
-                                <h3>📚 An Anorexic, Insecure Boy Experiencing Grief and Hope</h3>
-                                <p class="post-meta">Posted on June 24, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Louder Than Hunger</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/KNv-p6C4cPrw9Uvz_5SvDQ" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/06iT3TIr-OSLD8D02K-iKw" target="_blank" rel="noopener" data-cat="Books" data-date="Jul 9 2024"><span class="pdate">Jul 9 2024</span><span class="pmeta"><span class="ptitle">📚 A Game of Life, Death, and Survival</span><span class="pblurb">A book review of <i><b style="color: #3498db">The Hunger Games</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-school-for-good-and-evil" class="box style1 blog-post">
-                                <h3>📚 A Witch and Princess Seeking "The End"</h3>
-                                <p class="post-meta">Posted on June 23, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">The School for Good and Evil</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/MR8bnTsH5p8AtXOTdtd-Mg" class="button small" target="_blank">Read More</a>
-                            </article>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/MQdKI2Tx4naP7pnMApmhIQ" target="_blank" rel="noopener" data-cat="Books" data-date="Jul 5 2024"><span class="pdate">Jul 5 2024</span><span class="pmeta"><span class="ptitle">📚 The Raw, Heartbreaking Story Of Loss And Injustice</span><span class="pblurb">A book review of <i><b style="color: #3498db">Moonrise</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                            <article id="post-dress-coded" class="box style1 blog-post">
-                                <h3>📚 Fiery Girls Uniting For Revolution</h3>
-                                <p class="post-meta">Posted on June 23, 2024</p>
-                                <p>A book review of <i><b style="color: #3498db">Dress Coded</b></i></p>
-                                <a href="https://mp.weixin.qq.com/s/pqolNUdU7yRmSu-QJvanXA" class="button small" target="_blank">Read More</a>
-                            </article>
-                        </div>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/nq1p2bQoEG4NGd8eflEXog" target="_blank" rel="noopener" data-cat="Books" data-date="Jul 2 2024"><span class="pdate">Jul 2 2024</span><span class="pmeta"><span class="ptitle">📚 A Girl's Journey of Rolling, Crashing, Bumping, and Growing</span><span class="pblurb">A book review of <i><b style="color: #3498db">Roller Girl</b></i></span></span><span class="parrow">↗</span></a></li>
 
-                        <!-- Pagination -->
-                        <div class="pagination" style="text-align: center; margin-top: 2em;">
-                            <a href="#" id="prev-page">← Previous</a>
-                            <span id="page-info" style="margin: 0 1em;">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/-x5X6PCZ-Z6AC9_c8PfA-w" target="_blank" rel="noopener" data-cat="Film" data-date="Jun 30 2024"><span class="pdate">Jun 30 2024</span><span class="pmeta"><span class="ptitle">🎬 A Heartwarming Road Trip of an Imperfect Family</span><span class="pblurb">A movie review of <i><b style="color: #3498db">Little Miss Sunshine</b></i></span></span><span class="parrow">↗</span></a></li>
+
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/RdUWakswvyTauH-X0mIz8Q" target="_blank" rel="noopener" data-cat="Film" data-date="Jun 29 2024"><span class="pdate">Jun 29 2024</span><span class="pmeta"><span class="ptitle">🎬 A Cunning, Ruthless Woman Faking Her Own Death</span><span class="pblurb">A movie review of <i><b style="color: #3498db">Gone Girl</b></i></span></span><span class="parrow">↗</span></a></li>
+
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/gMPrgRJFDeEQAIzha9BeMg" target="_blank" rel="noopener" data-cat="Film" data-date="Jun 27 2024"><span class="pdate">Jun 27 2024</span><span class="pmeta"><span class="ptitle">🎬 The Wholesome Stereotype</span><span class="pblurb">A movie review of <i><b style="color: #3498db">Inside Out 2</b></i></span></span><span class="parrow">↗</span></a></li>
+
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/rbBUaGYc4X1Um9G7VPggYQ" target="_blank" rel="noopener" data-cat="Books" data-date="Jun 26 2024"><span class="pdate">Jun 26 2024</span><span class="pmeta"><span class="ptitle">📚 The Mysterious Minds' Operations With The Universe</span><span class="pblurb">A book review of <i><b style="color: #3498db">Philosophy, A Visual Encyclopedia</b></i></span></span><span class="parrow">↗</span></a></li>
+
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/KNv-p6C4cPrw9Uvz_5SvDQ" target="_blank" rel="noopener" data-cat="Books" data-date="Jun 24 2024"><span class="pdate">Jun 24 2024</span><span class="pmeta"><span class="ptitle">📚 An Anorexic, Insecure Boy Experiencing Grief and Hope</span><span class="pblurb">A book review of <i><b style="color: #3498db">Louder Than Hunger</b></i></span></span><span class="parrow">↗</span></a></li>
+
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/MR8bnTsH5p8AtXOTdtd-Mg" target="_blank" rel="noopener" data-cat="Books" data-date="Jun 23 2024"><span class="pdate">Jun 23 2024</span><span class="pmeta"><span class="ptitle">📚 A Witch and Princess Seeking "The End"</span><span class="pblurb">A book review of <i><b style="color: #3498db">The School for Good and Evil</b></i></span></span><span class="parrow">↗</span></a></li>
+
+                            <li><a class="post-link" href="https://mp.weixin.qq.com/s/pqolNUdU7yRmSu-QJvanXA" target="_blank" rel="noopener" data-cat="Books" data-date="Jun 23 2024"><span class="pdate">Jun 23 2024</span><span class="pmeta"><span class="ptitle">📚 Fiery Girls Uniting For Revolution</span><span class="pblurb">A book review of <i><b style="color: #3498db">Dress Coded</b></i></span></span><span class="parrow">↗</span></a></li>
+                        </ul>
+
+                        <div class="pager">
+                            <a href="#" id="prev-page" class="disabled">← Previous</a>
+                            <span class="info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
                             <a href="#" id="next-page">Next →</a>
                         </div>
                     </div>
 
-                    <!-- Table of Contents - Sidebar -->
-                    <div class="col-3 col-12-medium">
-                        <div class="box style1" style="position: sticky; top: 2em; padding: 1.2em; font-size: 0.85em; text-align: left;">
-                            <h3 style="margin-bottom: 0.8em; border-bottom: 2px solid #e44c65; font-size: 1.1em;">Contents</h3>
-                            <div id="toc-content" style="display: flex; flex-direction: column; gap: 0.6em;">
-                                <div class="toc-category">
-                                    <div class="category-header">
-                                        <span class="toggle-icon">▼</span>
-                                        <span class="category-title">Other Thoughts</span>
-                                        <span class="post-count"></span>
-                                    </div>
-                                    <div class="category-content"></div>
-                                </div>
-                                <div class="toc-category">
-                                    <div class="category-header">
-                                        <span class="toggle-icon">▼</span>
-                                        <span class="category-title">Book Reviews</span>
-                                        <span class="post-count"></span>
-                                    </div>
-                                    <div class="category-content"></div>
-                                </div>
-                                <div class="toc-category">
-                                    <div class="category-header">
-                                        <span class="toggle-icon">▼</span>
-                                        <span class="category-title">Movie Reviews</span>
-                                        <span class="post-count"></span>
-                                    </div>
-                                    <div class="category-content"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- TOC -->
+                    <aside class="toc">
+                        <div class="toc-title">Contents</div>
+                        <div id="toc-list"></div>
+                    </aside>
                 </div>
             </div>
-        </article>
+        </section>
+    </main>
 
-        <!-- Footer -->
-        <article class="wrapper style4">
-            <div class="container medium">
-                <footer>
-                    <ul id="copyright">
-                        <li>&copy; Situ E. Chen. All rights reserved.</li>
-                    </ul>
-                </footer>
-            </div>
-        </article>
+    <footer class="site-foot">
+        <div class="wrap foot-inner">
+            <div class="sig">&copy; 2025 Situ E. Chen — <em>writer, illustrator, dog-lover</em></div>
+            <div>Last updated · Oct 2&nbsp;2025</div>
+        </div>
+    </footer>
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-        
-        <script>
-            $(document).ready(function() {
-                // Categorize posts
-                const posts = $('.blog-post').toArray();
-                const categories = {
-                    'Other Thoughts': posts.filter(post => !$(post).find('h3').text().includes('📚') && !$(post).find('h3').text().includes('🎬')),
-                    'Book Reviews': posts.filter(post => $(post).find('h3').text().includes('📚')),
-                    'Movie Reviews': posts.filter(post => $(post).find('h3').text().includes('🎬'))
-                };
+    <script>
+        // ----- Pagination + filter by category from TOC -----
+        const POSTS_PER_PAGE = 8;
+        const allItems = Array.from(document.querySelectorAll('#post-list > li'));
+        const total = allItems.length;
+        const totalPages = Math.max(1, Math.ceil(total / POSTS_PER_PAGE));
+        document.getElementById('total-pages').textContent = totalPages;
 
-                // Generate TOC for each category
-                Object.entries(categories).forEach(([category, categoryPosts]) => {
-                    const categoryDiv = $(`.category-title:contains("${category}")`).closest('.toc-category');
-                    const contentDiv = categoryDiv.find('.category-content');
-                    
-                    // Update post count
-                    categoryDiv.find('.post-count').text(`(${categoryPosts.length})`);
-                    
-                    // Add posts to category
-                    categoryPosts.forEach(post => {
-                        const title = $(post).find('h3').text();
-                        const date = $(post).find('.post-meta').text().replace('Posted on ', '');
-                        const id = $(post).attr('id');
-                        contentDiv.append(`
-                            <a href="#${id}">
-                                <div class="post-entry">
-                                    <div class="post-title">${title}</div>
-                                    <div class="post-date">${date}</div>
-                                </div>
-                            </a>
-                        `);
-                    });
-                });
+        let currentPage = 1;
+        let activeCat = null; // null = all
 
-                // Add click handlers for category headers
-                $('.category-header').click(function() {
-                    const category = $(this).closest('.toc-category');
-                    const content = category.find('.category-content');
-                    
-                    category.toggleClass('expanded');
-                    content.slideToggle(200);
-                });
-
-                // Expand the first category by default
-                $('.toc-category:first').addClass('expanded').find('.category-content').show();
+        function visibleItems() {
+            return allItems.filter(li => {
+                if (!activeCat) return true;
+                return li.querySelector('.post-link').dataset.cat === activeCat;
             });
+        }
 
-            // Pagination functionality
-            const postsPerPage = 5;
-            const blogPosts = $('.blog-post').toArray();
-            const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-            let currentPage = 1;
+        function renderPage() {
+            const items = visibleItems();
+            const pages = Math.max(1, Math.ceil(items.length / POSTS_PER_PAGE));
+            if (currentPage > pages) currentPage = pages;
+            const start = (currentPage - 1) * POSTS_PER_PAGE;
+            const end = start + POSTS_PER_PAGE;
+            allItems.forEach(li => li.style.display = 'none');
+            items.slice(start, end).forEach(li => li.style.display = '');
+            document.getElementById('current-page').textContent = currentPage;
+            document.getElementById('total-pages').textContent = pages;
+            document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
+            document.getElementById('next-page').classList.toggle('disabled', currentPage >= pages);
+        }
 
-            function showPage(page) {
-                const start = (page - 1) * postsPerPage;
-                const end = start + postsPerPage;
-                
-                $('.blog-post').hide();
-                blogPosts.slice(start, end).forEach(post => {
-                    $(post).show();
-                });
-                
-                $('#current-page').text(page);
-                $('#total-pages').text(totalPages);
-                
-                $('#prev-page').toggleClass('disabled', page === 1);
-                $('#next-page').toggleClass('disabled', page === totalPages);
+        document.getElementById('prev-page').addEventListener('click', e => {
+            e.preventDefault();
+            if (currentPage > 1) { currentPage--; renderPage(); window.scrollTo({top: 0, behavior: 'smooth'}); }
+        });
+        document.getElementById('next-page').addEventListener('click', e => {
+            e.preventDefault();
+            const items = visibleItems();
+            const pages = Math.max(1, Math.ceil(items.length / POSTS_PER_PAGE));
+            if (currentPage < pages) { currentPage++; renderPage(); window.scrollTo({top: 0, behavior: 'smooth'}); }
+        });
+
+        // ----- Build TOC -----
+        const cats = {
+            'Essays': { label: 'Other Thoughts', items: [] },
+            'Books':  { label: 'Book Reviews',   items: [] },
+            'Film':   { label: 'Movie Reviews',  items: [] },
+            'Game':   { label: 'Game Reviews',   items: [] }
+        };
+        // Inject category tag above each title (matches TOC labels)
+        allItems.forEach(li => {
+            const a = li.querySelector('.post-link');
+            const cat = a.dataset.cat;
+            const meta = li.querySelector('.pmeta');
+            const title = meta.querySelector('.ptitle');
+            if (meta && title && cats[cat] && !meta.querySelector('.ptag')) {
+                const tag = document.createElement('span');
+                tag.className = 'ptag';
+                tag.textContent = cats[cat].label;
+                meta.insertBefore(tag, title);
             }
+        });
+        allItems.forEach(li => {
+            const a = li.querySelector('.post-link');
+            const cat = a.dataset.cat;
+            if (cats[cat]) {
+                cats[cat].items.push({
+                    href: a.getAttribute('href'),
+                    title: li.querySelector('.ptitle').innerHTML,
+                    date: a.dataset.date,
+                    external: a.target === '_blank'
+                });
+            }
+        });
 
-            // Initialize pagination
-            showPage(1);
+        const tocEl = document.getElementById('toc-list');
+        Object.entries(cats).forEach(([key, c], idx) => {
+            const cat = document.createElement('div');
+            cat.className = 'toc-cat' + (idx === 0 ? ' open' : '');
+            const emptyNote = c.items.length === 0
+                ? `<div class="cat-empty">No entries yet — coming soon.</div>`
+                : '';
+            cat.innerHTML = `
+                <div class="cat-head" data-cat="${key}">
+                    <span><span class="cat-name">${c.label}</span></span>
+                    <span class="cat-count">${c.items.length}<span class="chev">›</span></span>
+                </div>
+                <div class="cat-content">
+                    ${emptyNote}
+                    ${c.items.map(it => `
+                        <a href="${it.href}" ${it.external ? 'target="_blank" rel="noopener"' : ''}>
+                            <span class="t">${it.title}${it.external ? ' ↗' : ''}</span>
+                            <span class="d">${it.date}</span>
+                        </a>
+                    `).join('')}
+                </div>`;
+            tocEl.appendChild(cat);
+        });
 
-            // Add handler for TOC links
-            $('#toc-content').on('click', 'a', function(e) {
-                const targetId = $(this).attr('href').substring(1);
-                const targetPost = $('#' + targetId);
-                const targetIndex = blogPosts.indexOf(targetPost[0]);
-                const targetPage = Math.floor(targetIndex / postsPerPage) + 1;
-                
-                if (targetPage !== currentPage) {
-                    currentPage = targetPage;
-                    showPage(currentPage);
+        // Toggle
+        tocEl.addEventListener('click', e => {
+            const head = e.target.closest('.cat-head');
+            if (!head) return;
+            head.parentElement.classList.toggle('open');
+        });
+
+        renderPage();
+    
+        // Mobile hamburger
+        (function(){
+            const t = document.getElementById('nav-toggle');
+            const n = document.querySelector('.nav');
+            if (!t || !n) return;
+            t.addEventListener('click', () => {
+                const open = n.classList.toggle('open');
+                t.classList.toggle('open', open);
+                t.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            n.addEventListener('click', e => {
+                if (e.target.tagName === 'A') {
+                    n.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
                 }
             });
-
-            // Event handlers for pagination buttons
-            $('#prev-page').click(function(e) {
-                e.preventDefault();
-                if (currentPage > 1) {
-                    currentPage--;
-                    showPage(currentPage);
-                }
-            });
-
-            $('#next-page').click(function(e) {
-                e.preventDefault();
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    showPage(currentPage);
-                }
-            });
-        </script>
-    </body>
+        })();
+    </script>
+</body>
 </html>
