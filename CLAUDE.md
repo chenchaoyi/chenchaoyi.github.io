@@ -127,4 +127,4 @@ python3 -m http.server 8000
 
 ## Deploy
 
-GitHub Pages auto-deploys on push to `main`. The `CNAME` file pins the custom domain `situchen.me`.
+GitHub Pages auto-deploys on push to `master` (the repo's default branch). The `CNAME` file pins the custom domain `situchen.me`.
