@@ -1,38 +1,53 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Chimes - Situ E. Chen</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-        <style>
-            .poem {
-                margin: 2em auto;
-                max-width: 600px;
-                line-height: 1.8;
-                white-space: pre-line;
-            }
-            .author-date {
-                text-align: right;
-                margin-top: 2em;
-                font-style: italic;
-            }
-        </style>
-    </head>
-    <body class="is-preload">
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="container">
-                <li><a href="../index.html#top">Top</a></li>
-                <li><a href="../index.html#work">Work</a></li>
-                <li><a href="../index.html#portfolio">Portfolio</a></li>
-                <li><a class="active" href="../blog.html">Blog</a></li>
-                <li><a href="../causes.html">Things I Care About</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chimes - Situ E. Chen</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <style>
+        .poem {
+            margin: 2em auto;
+            max-width: 600px;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+        .author-date {
+            text-align: right;
+            margin-top: 2em;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
 
-        <!-- Blog Post -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="../index.html" class="brand">
+                <span class="brand-name">
+                    <span class="brand-en">Situ E. Chen</span>
+                    <span class="mono">situchen.me</span>
+                </span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="../index.html#top">Top</a></li>
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../causes.html">Things I Care About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
         <article class="wrapper style2">
             <div class="container">
                 <div class="row">
@@ -40,11 +55,11 @@
                         <article class="box style1" style="padding: 3em;">
                             <h2>Chimes</h2>
                             <p class="post-meta">Posted on March 9, 2025</p>
-                            
+
                             <div class="poem" style="margin: 3em auto;">
 We all
 sit at
-our own  
+our own
 train stations
 waiting
 waiting
@@ -92,7 +107,7 @@ until we fall
 We watch all that
 then we sigh
 frown
-rub our temples 
+rub our temples
 peer at our watches
 and return to our train stations
 to wait for tomorrow's chime
@@ -110,24 +125,33 @@ of ten-o-clock.
                 </div>
             </div>
         </article>
+    </main>
 
-        <!-- Footer -->
-        <article class="wrapper style4">
-            <div class="container medium">
-                <footer>
-                    <ul id="copyright">
-                        <li>&copy; Situ E. Chen. All rights reserved.</li>
-                    </ul>
-                </footer>
-            </div>
-        </article>
+    <footer class="site-foot">
+        <div class="wrap foot-inner">
+            <div class="sig">&copy; Situ E. Chen. All rights reserved.</div>
+            <div><a href="../blog.html" class="link">← Back to Blog</a></div>
+        </div>
+    </footer>
+    <script>
+        (function(){
+            const t = document.getElementById('nav-toggle');
+            const n = document.querySelector('.nav');
+            if (!t || !n) return;
+            t.addEventListener('click', () => {
+                const open = n.classList.toggle('open');
+                t.classList.toggle('open', open);
+                t.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            n.addEventListener('click', e => {
+                if (e.target.tagName === 'A') {
+                    n.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
 
-        <!-- Scripts -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/jquery.scrolly.min.js"></script>
-        <script src="../assets/js/browser.min.js"></script>
-        <script src="../assets/js/breakpoints.min.js"></script>
-        <script src="../assets/js/util.js"></script>
-        <script src="../assets/js/main.js"></script>
-    </body>
-</html> 
+</body>
+</html>

@@ -1,26 +1,40 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Behind the Scenes: Writing Olivia's Chapter - Situ E. Chen</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-    </head>
-    <body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Behind the Scenes: Writing Olivia's Chapter - Situ E. Chen</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+</head>
+<body>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="container">
-                <li><a href="../index.html#top">Top</a></li>
-                <li><a href="../index.html#work">Work</a></li>
-                <li><a href="../index.html#portfolio">Portfolio</a></li>
-                <li><a class="active" href="../blog.html">Blog</a></li>
-                <li><a href="../causes.html">Things I Care About</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="../index.html" class="brand">
+                <span class="brand-name">
+                    <span class="brand-en">Situ E. Chen</span>
+                    <span class="mono">situchen.me</span>
+                </span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="../index.html#top">Top</a></li>
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../causes.html">Things I Care About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+            </nav>
+        </div>
+    </header>
 
-        <!-- Blog Post -->
+    <main>
         <article class="wrapper style2">
             <div class="container">
                 <div class="row">
@@ -28,7 +42,7 @@
                         <article class="box style1" style="padding: 3em;">
                             <h2>Writing Olivia's Chapter</h2>
                             <p class="post-meta">Posted on April 1, 2024</p>
-                            
+
                             <p style="margin-bottom: 1.5em; text-align: left; line-height: 1.6; font-size: 1.1em;">Writing about a young author's journey has been both challenging and deeply personal. Here's a peek into my writing process!</p>
 
                             <p style="margin-bottom: 1.5em; text-align: left; line-height: 1.6; font-size: 1.1em;">I started out with the inspiration of this story when I hoped to craft a realistic fiction novel featuring a girl's complex relationship with her father. However, I soon realized that this girl has another story to tell: how she pursued her dreams and published her novel.</p>
@@ -47,25 +61,33 @@
                 </div>
             </div>
         </article>
+    </main>
 
-        <!-- Footer -->
-        <article class="wrapper style4">
-            <div class="container medium">
-                <footer>
-                    <ul id="copyright">
-                        <li>&copy; Situ E. Chen. All rights reserved.</li>
-                    </ul>
-                </footer>
-            </div>
-        </article>
+    <footer class="site-foot">
+        <div class="wrap foot-inner">
+            <div class="sig">&copy; Situ E. Chen. All rights reserved.</div>
+            <div><a href="../blog.html" class="link">← Back to Blog</a></div>
+        </div>
+    </footer>
+    <script>
+        (function(){
+            const t = document.getElementById('nav-toggle');
+            const n = document.querySelector('.nav');
+            if (!t || !n) return;
+            t.addEventListener('click', () => {
+                const open = n.classList.toggle('open');
+                t.classList.toggle('open', open);
+                t.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            n.addEventListener('click', e => {
+                if (e.target.tagName === 'A') {
+                    n.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
 
-        <!-- Scripts -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/jquery.scrolly.min.js"></script>
-        <script src="../assets/js/browser.min.js"></script>
-        <script src="../assets/js/breakpoints.min.js"></script>
-        <script src="../assets/js/util.js"></script>
-        <script src="../assets/js/main.js"></script>
-
-    </body>
-</html> 
+</body>
+</html>

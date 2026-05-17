@@ -1,26 +1,40 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>My Journey into Digital Illustration - Situ E. Chen</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-    </head>
-    <body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Journey into Digital Illustration - Situ E. Chen</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+</head>
+<body>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="container">
-                <li><a href="../index.html#top">Top</a></li>
-                <li><a href="../index.html#work">Work</a></li>
-                <li><a href="../index.html#portfolio">Portfolio</a></li>
-                <li><a class="active" href="../blog.html">Blog</a></li>
-                <li><a href="../causes.html">Things I Care About</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="../index.html" class="brand">
+                <span class="brand-name">
+                    <span class="brand-en">Situ E. Chen</span>
+                    <span class="mono">situchen.me</span>
+                </span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="../index.html#top">Top</a></li>
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../causes.html">Things I Care About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+            </nav>
+        </div>
+    </header>
 
-        <!-- Blog Post -->
+    <main>
         <article class="wrapper style2">
             <div class="container">
                 <div class="row">
@@ -28,7 +42,7 @@
                         <article class="box style1" style="padding: 3em;">
                             <h2>My Journey into Digital Illustration</h2>
                             <p class="post-meta">Posted on April 15, 2024</p>
-                            
+
                             <p style="margin-bottom: 1.5em; text-align: left; line-height: 1.6; font-size: 1.1em;">As I experience with new styles and forms of art, one important journey is my transition from tradional hand-drawing to Ipad digital drawing. I hope that by learning this new form of art, the visual impact of my stories will be improved.</p>
 
                             <p style="margin-bottom: 1.5em; text-align: left; line-height: 1.6; font-size: 1.1em;">However, this journey came with callenges. I started by taking digital creation classes, and soon began to experiment with brushes myself, sometimes with inspiration from the web. For now I have found my prefered brush (Studio pen) and am adapting to this new kind of creation.</p>
@@ -37,7 +51,6 @@
 
                             <p style="margin-bottom: 3em; text-align: left; line-height: 1.6; font-size: 1.1em;">Below are a couple clips of how I created certain pages of digital art!</p>
 
-                            <!-- Add your artwork clips here -->
                             <div class="video-container" style="margin: 2em 0;">
                                 <video width="100%" controls>
                                     <source src="../videos/digital-art-process.mp4" type="video/mp4">
@@ -51,25 +64,33 @@
                 </div>
             </div>
         </article>
+    </main>
 
-        <!-- Footer -->
-        <article class="wrapper style4">
-            <div class="container medium">
-                <footer>
-                    <ul id="copyright">
-                        <li>&copy; Situ E. Chen. All rights reserved.</li>
-                    </ul>
-                </footer>
-            </div>
-        </article>
+    <footer class="site-foot">
+        <div class="wrap foot-inner">
+            <div class="sig">&copy; Situ E. Chen. All rights reserved.</div>
+            <div><a href="../blog.html" class="link">← Back to Blog</a></div>
+        </div>
+    </footer>
+    <script>
+        (function(){
+            const t = document.getElementById('nav-toggle');
+            const n = document.querySelector('.nav');
+            if (!t || !n) return;
+            t.addEventListener('click', () => {
+                const open = n.classList.toggle('open');
+                t.classList.toggle('open', open);
+                t.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            n.addEventListener('click', e => {
+                if (e.target.tagName === 'A') {
+                    n.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
 
-        <!-- Scripts -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/jquery.scrolly.min.js"></script>
-        <script src="../assets/js/browser.min.js"></script>
-        <script src="../assets/js/breakpoints.min.js"></script>
-        <script src="../assets/js/util.js"></script>
-        <script src="../assets/js/main.js"></script>
-
-    </body>
-</html> 
+</body>
+</html>

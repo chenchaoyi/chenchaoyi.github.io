@@ -1,49 +1,63 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>The Problem With Disney - Part 1 - Situ E. Chen</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-        <style>
-            .image-container {
-                margin: 2em 0;
-                text-align: center;
-            }
-            .image-container img {
-                max-width: 60%;
-                height: auto;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            }
-            .image-caption {
-                margin-top: 0.5em;
-                font-style: italic;
-                color: #666;
-            }
-            .justify-content {
-                text-align: justify;
-            }
-            .single-line-title {
-                font-size: 2.2em;
-            }
-        </style>
-    </head>
-    <body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Problem With Disney - Part 1 - Situ E. Chen</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <style>
+        .image-container {
+            margin: 2em 0;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 60%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .image-caption {
+            margin-top: 0.5em;
+            font-style: italic;
+            color: #666;
+        }
+        .justify-content {
+            text-align: justify;
+        }
+        .single-line-title {
+            font-size: 2.2em;
+        }
+    </style>
+</head>
+<body>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="container">
-                <li><a href="../index.html#top">Top</a></li>
-                <li><a href="../index.html#work">Work</a></li>
-                <li><a href="../index.html#portfolio">Portfolio</a></li>
-                <li><a class="active" href="../blog.html">Blog</a></li>
-                <li><a href="../causes.html">Things I Care About</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="../index.html" class="brand">
+                <span class="brand-name">
+                    <span class="brand-en">Situ E. Chen</span>
+                    <span class="mono">situchen.me</span>
+                </span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="../index.html#top">Top</a></li>
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../causes.html">Things I Care About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+            </nav>
+        </div>
+    </header>
 
-        <!-- Blog Post -->
+    <main>
         <article class="wrapper style2">
             <div class="container">
                 <div class="row">
@@ -51,14 +65,14 @@
                         <article class="box style1" style="padding: 3em;">
                             <h2 class="single-line-title">The Problem With Disney - Part 1</h2>
                             <p class="post-meta">Posted on May 2025</p>
-                            
+
                             <div class="image-container">
                                 <img src="../images/disney-princesses.png" alt="Disney Castle" />
                             </div>
 
                             <div class="justify-content">
                                 <p><b>—Exploring Disney's teeth-grinding issues Part 1</b></p>
-                                
+
                                 <p><b>Once a genuine, sweet artistic studio, now Disney is a multi-billion dollar industrialized corporation relying on unsalvageable remakes and sequels.</b> Yes, that is the question. Is Disney still salvageable? Perhaps. <b>So today let's dive into the many areas in which Disney went wrong, but also possible strategies that might just save their company.</b></p>
 
                                 <p>How exactly has Disney changed on the whole? Here is a quick background coverage on Disney's history: Basically, Disney started out as an innovative, genuine and original art studio recreating fairytales (and notably originals such as Mickey Mouse). Their first movie ever, Snow White and the Seven Dwarves took a massive risk corporately as the first full length movie division ever made, but it became an unmissable classic with art-defining themes such as innocence, purity and love.</p>
@@ -92,24 +106,33 @@
                 </div>
             </div>
         </article>
+    </main>
 
-        <!-- Footer -->
-        <article class="wrapper style4">
-            <div class="container medium">
-                <footer>
-                    <ul id="copyright">
-                        <li>&copy; Situ E. Chen. All rights reserved.</li>
-                    </ul>
-                </footer>
-            </div>
-        </article>
+    <footer class="site-foot">
+        <div class="wrap foot-inner">
+            <div class="sig">&copy; Situ E. Chen. All rights reserved.</div>
+            <div><a href="../blog.html" class="link">← Back to Blog</a></div>
+        </div>
+    </footer>
+    <script>
+        (function(){
+            const t = document.getElementById('nav-toggle');
+            const n = document.querySelector('.nav');
+            if (!t || !n) return;
+            t.addEventListener('click', () => {
+                const open = n.classList.toggle('open');
+                t.classList.toggle('open', open);
+                t.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            n.addEventListener('click', e => {
+                if (e.target.tagName === 'A') {
+                    n.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
 
-        <!-- Scripts -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/jquery.scrolly.min.js"></script>
-        <script src="../assets/js/browser.min.js"></script>
-        <script src="../assets/js/breakpoints.min.js"></script>
-        <script src="../assets/js/util.js"></script>
-        <script src="../assets/js/main.js"></script>
-    </body>
-</html> 
+</body>
+</html>
