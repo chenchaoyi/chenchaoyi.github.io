@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#f3ede1"/>
+  <text x="32" y="49" font-family="'Iowan Old Style','Cormorant Garamond','EB Garamond',Georgia,'Times New Roman',serif" font-style="italic" font-weight="400" font-size="52" text-anchor="middle" fill="#1c1916">S</text>
+  <circle cx="48" cy="18" r="4.5" fill="#a85638"/>
+</svg>
