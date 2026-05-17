@@ -154,6 +154,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 3em 0; }
     .brand-divider { height: 22px; }
     .brand-en { font-size: 0.95rem; }
 }
+.nav-toggle { display: none; }
 .nav {
     display: flex;
     gap: 1.5rem;
