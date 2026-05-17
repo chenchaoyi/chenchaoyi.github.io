@@ -1,17 +1,15 @@
 {
-  "name": "tests",
+  "name": "situchen-tests",
   "version": "1.0.0",
-  "description": "Playwright test suite for Situ E. Chen's website",
-  "main": "index.js",
+  "description": "Playwright end-to-end tests for situchen.me",
+  "private": true,
   "scripts": {
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
-    "test:headed": "playwright test --headed"
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.51.1"
   }
