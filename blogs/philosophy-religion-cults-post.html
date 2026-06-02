@@ -22,6 +22,10 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        /* Per-orientation sizing so landscape and portrait read at a
+           comparable visual height instead of one uniform width. */
+        .image-container img.wide { max-width: 58% !important; }
+        .image-container img.tall { max-width: 30% !important; }
         .image-caption {
             margin-top: 0.5em;
             font-style: italic;
@@ -67,6 +71,8 @@
             .image-container img {
                 max-width: 75% !important;
             }
+            .image-container img.wide { max-width: 92% !important; }
+            .image-container img.tall { max-width: 55% !important; }
         }
     </style>
 </head>
@@ -104,7 +110,7 @@
                             <p class="post-meta">Posted on October 2025</p>
 
                             <div class="image-container">
-                                <img src="../images/blog/religion/religion-0.png" alt="Religion and Philosophy" />
+                                <img src="../images/blog/religion/religion-0.png" alt="Religion and Philosophy" class="tall" />
                             </div>
 
                             <div class="justify-content">
@@ -120,7 +126,7 @@
                                     <p>Now the official text begins!!!!!!👇</p>
 
                                     <div class="image-container">
-                                        <img src="../images/blog/religion/religion-1.png" alt="Philosophy Begins" />
+                                        <img src="../images/blog/religion/religion-1.png" alt="Philosophy Begins" class="wide" />
                                     </div>
 
                                     <p>It's amazing how out of a single sentence, "Everything is made of water", stems an entire branch of universal skepticism that winds back centuries and continues to push the boundaries of modern thinking now. We're talking about philosophy here.</p>
@@ -144,7 +150,7 @@
                                     <p><strong>Wonderment.</strong> Opposite to number three, exceedingly beautiful or psychologically sweeping experiences could occasionally make its viewers regain their faith in life, inspiring the notion of believing in alternate being/beings.</p>
 
                                     <div class="image-container">
-                                        <img src="../images/blog/religion/religion-2.png" alt="Religion Wonderment" />
+                                        <img src="../images/blog/religion/religion-2.png" alt="Religion Wonderment" class="wide" />
                                     </div>
 
                                     <p>Personally, it seems inexplicable that someone would wholeheartedly put their spiritual stability in something without proof, reason or logic, but I suppose that is the wrong way to think about religion. I'm thinking behind thickly science-tinted glasses: Glasses that ask for proof; as though religion, which is the birth and reign of an anti-dimensional being, was the same thing as evolution, the rather sluggish process of an ape evolving to a slightly less ape-resembling creature. No.</p>
@@ -160,7 +166,7 @@
                                     <p>But that leads me down a separate train of thought...If religion was so coveted, why are so many other religion-like concepts frowned upon or even illegal? More specifically, cults? What is the difference between a religion and a cult, anyway? Is it merely the mania and frenzy of cults that place them as inferior socially, or is it something else. What even are cults???</p>
 
                                     <div class="image-container">
-                                        <img src="../images/blog/religion/religion-3.png" alt="Religion vs Cults" />
+                                        <img src="../images/blog/religion/religion-3.png" alt="Religion vs Cults" class="wide" />
                                     </div>
 
                                     <h3 class="section-heading">Religion vs. CULTS</h3>
@@ -180,7 +186,7 @@
                                     <p>So what draws the line between religion and cult? <strong>The answer is social acceptance.</strong> Religions such as Judaism, Buddhism and Hinduism are all ancient belief systems, passed on by generations of carefully maintained social navigation. Contrarily, cults are often modern and fetishized concepts that result in unhealthy behavior/consequences.</p>
 
                                     <div class="image-container">
-                                        <img src="../images/blog/religion/religion-4.png" alt="Social Acceptance and Philosophy" />
+                                        <img src="../images/blog/religion/religion-4.png" alt="Social Acceptance and Philosophy" class="tall" />
                                     </div>
 
                                     <p>Is the answer to good and evil social acceptance too? Is everything down to social acceptance? I do not know, but let's talk about it.</p>
