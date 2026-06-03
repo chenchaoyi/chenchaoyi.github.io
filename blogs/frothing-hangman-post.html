@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frothing Hangman - Situ E. Chen</title>
+    <link rel="icon" type="image/svg+xml" href="../images/site/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="../images/site/favicon.ico" />
+    <link rel="apple-touch-icon" href="../images/site/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <style>
+        .poem {
+            margin: 2em auto;
+            max-width: 600px;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+        .poem-intro {
+            max-width: 600px;
+            margin: 0.5em auto 0;
+            font-style: italic;
+            color: var(--ink-mute);
+        }
+        .author-date {
+            text-align: right;
+            max-width: 600px;
+            margin: 2em auto 0;
+            font-style: italic;
+        }
+        .cover-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 2em auto 0;
+            display: block;
+            border-radius: 6px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+        .cover-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="../index.html" class="brand">
+                <span class="brand-name">
+                    <span class="brand-en">Situ E. Chen</span>
+                    <span class="mono">situchen.me</span>
+                </span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="../index.html#top">Top</a></li>
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../causes.html">Things I Care About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="wrapper style2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 col-12-medium" style="margin: 0 auto; max-width: 800px;">
+                        <article class="box style1" style="padding: 3em;">
+                            <h2>Frothing Hangman</h2>
+                            <p class="post-meta">Posted on December 2025</p>
+                            <p class="poem-intro">— An informal, winter poem I wrote (a writing practice)</p>
+
+                            <div class="poem" style="margin: 3em auto;">
+Copper blood
+and rope-throat
+swinging
+swaying
+skittering in the wind
+Winding buds
+a gleaming gulf
+Sinking
+Wading
+Let's plummet together
+
+Quiet now
+quiet
+everything
+is
+fine
+Let's hold our breath
+until we run out
+Is that fine
+with you?
+Until we run out
+of breath
+
+I was afraid of smoke
+but now I fear tides more
+Ebbing tides
+forged from
+tears
+
+Weeping
+surging
+in a
+gust of wind
+The shores of life
+Do they
+do they
+overlook an ocean of dying?
+
+Thorned smoke
+icy jabs
+It hurts
+it kind of hurts
+Let's swim together
+shall we?
+
+Pain burns
+but
+ice hurts more
+doesn't it?
+
+Your tears
+taste of blood
+My eternity of blood
+and fume
+ashes
+in my mouth
+burning
+in an ocean
+of killing
+
+Let's go
+let's go
+I'll tie a stone to your feet
+
+Will you tie one to mine?
+                            </div>
+
+                            <div class="cover-container">
+                                <img src="../images/blog/hangman/hangman.jpg" alt="Frothing Hangman — a noose suspended over a stormy, blood-streaked sea" class="cover-image">
+                            </div>
+
+                            <div class="author-date">
+                                Situ
+                                December 2025
+                            </div>
+
+                            <a href="../blog.html" class="button small" style="margin-top: 2em;">← Back to Blog</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-foot">
+        <div class="wrap foot-inner">
+            <div class="sig">&copy; Situ E. Chen. All rights reserved.</div>
+            <div><a href="../blog.html" class="link">← Back to Blog</a></div>
+        </div>
+    </footer>
+    <script>
+        (function(){
+            const t = document.getElementById('nav-toggle');
+            const n = document.querySelector('.nav');
+            if (!t || !n) return;
+            t.addEventListener('click', () => {
+                const open = n.classList.toggle('open');
+                t.classList.toggle('open', open);
+                t.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            n.addEventListener('click', e => {
+                if (e.target.tagName === 'A') {
+                    n.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
