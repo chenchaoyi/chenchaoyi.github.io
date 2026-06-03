@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wherever Philosophy Takes You (part 3: Ethical Dilemmas) - Situ E. Chen</title>
+    <link rel="icon" type="image/svg+xml" href="../images/site/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="../images/site/favicon.ico" />
+    <link rel="apple-touch-icon" href="../images/site/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <style>
+        .image-container {
+            margin: 2em 0;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 50% !important;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        /* Per-illustration sizing so banners, landscapes and the near-square
+           image read at a comparable visual weight instead of one ratio. */
+        .image-container img.lead   { max-width: 60% !important; }
+        .image-container img.banner { max-width: 66% !important; }
+        .image-container img.wide   { max-width: 52% !important; }
+        .image-container img.sq     { max-width: 40% !important; }
+        .image-caption {
+            margin-top: 0.5em;
+            font-style: italic;
+            color: #666;
+        }
+        .justify-content {
+            text-align: justify;
+        }
+        .single-line-title {
+            font-size: 2.2em;
+        }
+        .essay-content {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .essay-content p {
+            margin-bottom: 1.5em;
+        }
+        .essay-content p:first-of-type {
+            text-indent: 0;
+            color: #666;
+            text-align: justify;
+            margin-bottom: 2em;
+        }
+        .essay-content ol,
+        .essay-content ul {
+            margin: 1.3em 0;
+            padding-left: 1.6em;
+            line-height: 1.7;
+        }
+        .essay-content li {
+            margin-bottom: 0.6em;
+        }
+        .essay-content ol ol {
+            margin: 0.7em 0;
+        }
+        .section-heading {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--ink);
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+        /* Betrayal decision tree — rebuilt from the original flow chart */
+        .flowchart {
+            margin: 2.2em auto;
+            max-width: 640px;
+        }
+        .fc-root, .fc-choice, .fc-out {
+            border: 1px solid var(--rule);
+            border-radius: 6px;
+            text-align: center;
+        }
+        .fc-root {
+            padding: 0.9em 1.1em;
+            background: var(--bg-deep);
+            color: var(--ink);
+        }
+        .fc-branches {
+            display: flex;
+            gap: 1.4em;
+            margin-top: 1.3em;
+        }
+        .fc-branch {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .fc-choice {
+            padding: 0.75em 0.9em;
+            background: var(--bg-card);
+            color: var(--ink);
+            font-style: italic;
+        }
+        .fc-odds {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.18em;
+            color: var(--accent);
+            text-align: center;
+            margin: 0.85em 0;
+        }
+        .fc-outcomes {
+            display: flex;
+            gap: 0.75em;
+        }
+        .fc-out {
+            flex: 1;
+            padding: 0.7em 0.75em;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: var(--ink-soft);
+            background: var(--bg-card);
+        }
+        @media (max-width: 640px) {
+            .image-container img        { max-width: 85% !important; }
+            .image-container img.sq     { max-width: 62% !important; }
+            .fc-branches { flex-direction: column; gap: 1em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="../index.html" class="brand">
+                <span class="brand-name">
+                    <span class="brand-en">Situ E. Chen</span>
+                    <span class="mono">situchen.me</span>
+                </span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="../index.html#top">Top</a></li>
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../causes.html">Things I Care About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="wrapper style2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 col-12-medium" style="margin: 0 auto; max-width: 800px;">
+                        <article class="box style1" style="padding: 3em;">
+                            <h2 class="single-line-title">Wherever Philosophy Takes You (part 3: Ethical Dilemmas)</h2>
+                            <p class="post-meta">Posted on October 2025</p>
+
+                            <div class="image-container">
+                                <img src="../images/blog/ethics/ethics-0.png" alt="The Lever Question and Other Ethical Dilemmas" class="lead" />
+                            </div>
+
+                            <div class="justify-content">
+                                <div class="essay-content">
+                                    <h3 class="section-heading">The lever question and other ethical dilemmas</h3>
+
+                                    <p>Ethical dilemmas are a huge branch of the conversation about justice.</p>
+
+                                    <p>If the room of justice was to breach morality, an ethical dilemma is when both the ceiling and the floor are different shades of the same rightness. Who then, are we to be the ultimate deciders of another human being's fate?</p>
+
+                                    <p>Let's start with the classic ethical setting: you are at a train station, in front of two split railroad tracks. The train is heading towards one railroad track, where five people are tied to it. On the other railroad track, only one person is tied down. In front of you is a lever. If you pulled it, you would be able to redirect the route of the train towards the one person instead of the five people. Would you pull the lever?</p>
+
+                                    <p>I wouldn't pull the lever. If I did, I would have to live the rest of my life chained to the lock of guilt; if I didn't, I would be a guilty bystander rather than a guilty perpetrator. It is a selfish decision, but if there were people willing to sacrifice their moral stability for the sake of five people, I applaud them; I am not one of them. Among other reasons such as to avoid legal punishment and to ease the claws of my conscience, the answer seems clear. I do not want to decide the fate of that one person, which is what would happen if I pulled the lever. If I stood by, at least I would only become the chained witness to the fates of five people.</p>
+
+                                    <div class="image-container">
+                                        <img src="../images/blog/ethics/ethics-1.png" alt="The trolley problem: a tram, a split track and the lever" class="banner" />
+                                    </div>
+
+                                    <div class="image-container">
+                                        <img src="../images/blog/ethics/ethics-2.png" alt="Five people tied to one track, one person tied to the other" class="banner" />
+                                    </div>
+
+                                    <p>Here's an interesting branch of this question: There is only one railroad track, and the train is heading towards the five people. A fat man is leaning over the track in front of the train. Would you push him so that the train stops for him instead of the five people?</p>
+
+                                    <p>Ironically, most people who chose to pull the lever for the first question would not choose to push the fat man. This only goes to show how <strong>personal mentality is the main outlook for most ethical conflicts</strong>, and that considerations for future conscience usually wins out human nobility of the immediate minute.</p>
+
+                                    <p>Research interestingly enlightens me that (and I agree) the main mental reason why someone wouldn't push the fat man but would pull the lever is the difference between intending and foreseeing harm. By pushing the fat man, you are <em>intending</em> harm, initiating the act of it, when the natural decision would have been to do nothing. However, by pulling the trolley, your main considerations are on preventing the foreseen deaths of the five people with the death of the one person being an unfortunate side-effect. The phycological difference between initiation and prediction is just another impactful factor of queries on morality.</p>
+
+                                    <div class="image-container">
+                                        <img src="../images/blog/ethics/ethics-3.png" alt="A man reaching for the lever as the train approaches" class="wide" />
+                                    </div>
+
+                                    <p>However, a separate trail appears: what if one of my family members, say my father, were among the five people? I'm certain my decision would have been different then; I would have pulled the lever or pushed the fat man. But that doesn't erase the lock of guilt that is sure to follow.</p>
+
+                                    <p><strong>Personal bias dominates how we decide the ending to an ethical dilemma</strong>: my personal bias towards family members is a prevalent one, but other more controversial ones include that towards gender, race and age. Maybe there isn't supposed to be an entirely impartial solution to an ethical dilemma; for if one existed, it wouldn't be the solution to an ethical dilemma.</p>
+
+                                    <div class="image-container">
+                                        <img src="../images/blog/ethics/ethics-4.png" alt="Two gang members sitting in a cell" class="wide" />
+                                    </div>
+
+                                    <p>Here's another ethical setting to chew on: you are a member of a gang and you have been arrested alongside another gang member. You can either a) remain silent or b) betray the gang member and testify for his crime. There are three possible outcomes:</p>
+
+                                    <ol style="list-style-type: lower-alpha;">
+                                        <li>If both you and the gang member remain silent, you both serve one year in prison.</li>
+                                        <li>If you betray the gang member and he remains silent, you will be set free and he will serve 3 years in prison.</li>
+                                        <li>If you both betray each other, you will serve 2 years in prison each.</li>
+                                    </ol>
+
+                                    <p>What would you do? By betraying the member, a vital ethical trust is breached. But remaining silent holds the risk of additional years in prison.</p>
+
+                                    <p>If my gang would not punish me for betraying the member, I would choose the option of betrayal. Below is a flow chart of why:</p>
+
+                                    <div class="flowchart">
+                                        <div class="fc-root">I can choose whether I want to betray the gang member or remain silent.</div>
+                                        <div class="fc-branches">
+                                            <div class="fc-branch">
+                                                <div class="fc-choice">I remain silent.</div>
+                                                <div class="fc-odds">50 / 50</div>
+                                                <div class="fc-outcomes">
+                                                    <div class="fc-out">The gang member betrays me, and I spend 3 years in prison.</div>
+                                                    <div class="fc-out">The gang member remains silent, and we each get a year.</div>
+                                                </div>
+                                            </div>
+                                            <div class="fc-branch">
+                                                <div class="fc-choice">I betray the gang member.</div>
+                                                <div class="fc-odds">50 / 50</div>
+                                                <div class="fc-outcomes">
+                                                    <div class="fc-out">The gang member remains silent, and I am set free.</div>
+                                                    <div class="fc-out">The gang member betrays me, and we each get 2 years.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p>By remaining silent, I will have to serve years at prison no matter the outcome. By betraying the gang member, I have a 50/50 chance of being set free, while in remaining silent, the most hopeful outcome would be one year in prison. Answering this dilemma (for me) is a comparison between:</p>
+
+                                    <ul>
+                                        <li>1 year in prison &lt;--&gt;<strong>0 years in prison</strong></li>
+                                        <li>3 years in prison&lt;--&gt;<strong>2 years in prison</strong></li>
+                                    </ul>
+
+                                    <p>The answer is obvious. Since both outcomes of each choice have a 50/50 chance of becoming true, the smartest choice logically would be betrayal.</p>
+
+                                    <p>On the other hand, from a moral standpoint, betrayal shatters a fragile trust and erases moral dignity. Support among members is often valued in gangs, so the lack thereof could result in personal emotional blame. Even if you were set free, your mind would not have been, entwined in the metal chain of conscience. Some would choose to remain silent simply to preserve that moral poise.</p>
+
+                                    <p>Personally, I believe that 3 years in prison (or 2) doesn't completely dismember a person's life, and since we both committed the crime and are welcome to legally betray each other, betrayal it is.</p>
+
+                                    <div class="image-container">
+                                        <img src="../images/blog/ethics/ethics-5.png" alt="A figure between a red cross and a green check — the choice to betray or stay silent" class="sq" />
+                                    </div>
+
+                                    <p>Whilst that ethical question is one of the simpler ones, here's a classic one: You and some people from your town are hiding from a gang of robbers. You know for certain that your baby <em>will</em> cough, and that the cough will alert the robbers, bringing on the death of the entire town. Would you kill the baby by putting a hand over his mouth?</p>
+
+                                    <p>This question cannot be considered rationally, for rationally, the answer is clear. Instead, humanoid maternal instincts must come into play, intermixed with the conflicting morality of reason and conscience. I am unable to answer this question until I experience it, for so many factors come into play: maternal dispositions, rational instincts, suddenness of the moment, parental responsibility, socialobligation, the weight of conscience, the question that if you killed your child, would <em>you</em> be willing to live anymore? And so on.</p>
+
+                                    <p>Some mothers wouldn't sacrifice their children even to save the world, while others would weigh their dispositions and let the need for momentary rationality sweep over them. This question is a complex query towards mothers, parents, guardians and society, a debate between reason and love.</p>
+
+                                    <p>On a separate note, by erasing the lock of maternal attachment and enlarging the subsequential consequence, a separate question emerges. (I admit that I did switch the wording around a <em>bit</em>): Who would you choose to sacrifice to the aliens for experiment in order to save Earth? (With full knowledge that the aliens <em>will</em> be able to destroy Earth, and that they intend to do so but won't ever again as long as they receive a human sacrifice.) (Also I know that this question doesn't have a lot to do with the baby dilemma, but yeah.) Who would you choose to sacrifice? How would society decide on who to sacrifice?</p>
+
+                                    <p>Personally, I would vote to sacrifice one of the serial killers or criminals from my country. It's a basic answer, but at least it weighs in more on the side of conceptual justice. As for "from my country", the detail would be preventative to global conflicts and international accusations.</p>
+
+                                    <p>As a human race, I do not know whether we are entitled to glean one of our kind simply for long-term self-preservation, but I believe that my survival instincts and fear chemicals would outweigh my love for philosophy the day aliens come to Earth.</p>
+
+                                    <p>However, looking at this philosophically, I do not believe that the human race is entitled to any other person's life. If we were, say, eagles or lions, sacrificing a runt in our nest would simply be seen as a circle of life—but that's the problem, isn't it? <em>We</em> see it as a circle of life. <em>We</em> already have the intelligence to gain perspective, knowledge and conscience. That's what separates human nature from animalistic instincts. Self-awareness. That self-awareness condemns us from unaware actions, for unaware actions are that committed by animals instead of humans, and as a self-aware species, we have the moral obligation to remain self-aware. Even if we pushed away the most human instincts inside of us, that self-awareness will haunt our speech and literature—<em>speech, literature</em>. The art is proof of our self-awareness. The definition of self-awareness, the fact that there <em>is</em> one; the sheer method in which we built our own intricate people within the center of the grand scheme called Universe—becomes proof of the conscious race that we have learned to become.</p>
+
+                                    <div class="image-container">
+                                        <img src="../images/blog/ethics/ethics-6.png" alt="An alien pointing at a burning Earth" class="wide" />
+                                    </div>
+
+                                    <p>As kings of the star dust we name "Earth", it is our responsibility to wield that power with elegance and self-control, for both are virtues that self-awareness seeks, and listening to our self-awareness is the least we can do to fulfill the wish for conscience brimming inside the most of our human natures. The wish of conscience whispers to us <em>not</em> to sacrifice a human being, but to instead fight as one against the unbeatable. (Aliens.)</p>
+
+                                    <p>It is not in the nature of corrupt kings to become corrupt, just as it is not in our instincts to become unaware of our natures. Artists have sought to enhance that nature all of their lives, which is proof enough for the existence of such compassionate clarity. As Oscar Schindler quoted from the movie <em>Schindler's List,</em> "Power is when we have every justification to kill, and we don't." Conscience is when we have every reason to surrender to our own evils, and we don't.</p>
+
+                                    <div class="image-container">
+                                        <img src="../images/blog/ethics/ethics-7.png" alt="A crowned figure facing a UFO and an alien" class="wide" />
+                                    </div>
+
+                                    <p>Looking back to the ethical dilemma, maybe it is just another circle of life for us to sacrifice one of our own kind in order to save everything, but maybe human psychology and the nature of awareness has prevented any human act from ever being natural again. Maybe humankind has over-extended itself, spread its webs too wide, flown too high to the sun on her Dedalus's wings.</p>
+
+                                    <p>But then again, any other high-intelligence organism would have likely developed such thoughts and influences too; they would have sunk their nails into the flesh of Earth in order to cling tighter to an eon that they know is slipping away. As we do.</p>
+
+                                    <p>Humankind is not the sole culprit for nature's sorrow; in fact, it is arguable whether we are culprits at all. Why bother blaming the skunk for stinking when he has been triggered? We have been triggered by our intelligence, and consequently we have caused a series of exploding mines all over Earth, through the many sins of human mind—what we define as sins.</p>
+
+                                    <p>Is there anyone to blame if the result of civilization was inevitable? Are such texts like the one I'm writing now unavoidable because of humans' evolving eternity? Or is it eternity simply because we don't want it to end.</p>
+
+                                    <p>Bringing the topic back to the ethical dilemma—<em>no</em>, we do not have the right to let go of our self-awareness, but perhaps we could be pardoned for our more innate, animalistic urge to survive. After all, when the entire race is sinking in the gulf, we become but part of the jump.</p>
+
+                                    <p>That's enough of the philosophical aspects. Turning back to a more pragmatic view, this is how I believe our current society would react to the aliens' demand (this is assuming that we <em>absolutely</em> cannot beat the aliens, and that everyone <em>absolutely</em> know this):</p>
+
+                                    <ol>
+                                        <li>There would be ethical debates like this. People would explore the concept of human nature and argue that the sacrificing of a human being goes against it.</li>
+                                        <li>Regardless of the ethical aspects, governments and the UN will come together to an urgent meeting regarding this.</li>
+                                        <li>Governments will release official statements to their countries, stating that they are still working on how to go about the aliens.</li>
+                                        <li>Some people will step forward as volunteers (cultists, patients with terminal diseases, valiant personalities)</li>
+                                        <li>Meanwhile, governments are backhandedly involving politics in this, trying to win over political adversaries and release anti-union propaganda.</li>
+                                        <li>A political selection is made. A diplomatically disliked yet powerless human being is selected, and since there is brash agreement from international organizations, he is taken by force.
+                                            <ol style="list-style-type: decimal;">
+                                                <li>An extension on this point: I believe that there are 2 types of people the government could potentially select:
+                                                    <ol style="list-style-type: lower-alpha;">
+                                                        <li>Powerless, nameless yet subtly effectual political involvers who backhandedly survey the political scene—this choice benefits the governments.</li>
+                                                        <li>Criminals. However, this choice is more complex, for none of the countries would probably want to nominate their criminals in fear of international reputation. Heated debates on political factors, race and gender come to play during the selection of the criminal. This option is beneficial for ensuring that the general public doesn't directly accuse the government of involving politics.</li>
+                                                    </ol>
+                                                </li>
+                                                <li>Personally, I find option a) more likely, since it is the one that would benefit the governments most immediately. Considerations for the public might come second in such time of need. Regardless, continue to step 7….</li>
+                                            </ol>
+                                        </li>
+                                        <li>Discussions on racism, sexism and ageism etc. become involved in the selection of the human being.</li>
+                                        <li>New book, movie and music releases regarding this topic become rampant. Non-profits, donations, propaganda and complaints for/against the selected human are formed.</li>
+                                        <li>The Earth is thrown into chaos even after the aliens leave. Wars are potentially erupted, and international tensions become strung tight.</li>
+                                        <li>Complaints about society's unfair political prioritizations are voiced. Protests become rampant in the more liberal countries, while harsher laws are reinforced in the more conservative ones.</li>
+                                        <li>Society is thrown into temporary chaos; the ink of unrest only spread by the growing web of social media.</li>
+                                    </ol>
+
+                                    <p>That, in my opinion, is what would happen realistically.</p>
+
+                                    <p>I honestly do like this ethical question, for it is a very interesting take on humankind's conscience and where politics come into play during times of need. Perhaps it isn't right for an entire species to condemn the fate of one, but condemn we must, and it might as well be the most rational decision in the grand scheme of things. Plus, the most stupid decision.</p>
+
+                                    <p>Something I do find interesting is that although many mothers would deny the aliens their children when such needs arose, the same people wouldn't hesitate to nominate a type of stranger in order to save themselves. This only demonstrates the importance of instinct, favor and emotional impression in the making of a moral decision. That's the beauty of an ethical dilemma, I think. The clarified look into our species as a whole, the emotional struggle against the rope of reason.</p>
+
+                                    <div class="image-container">
+                                        <img src="../images/blog/ethics/ethics-8.png" alt="A lone figure on a pedestal above a crowd" class="wide" />
+                                    </div>
+
+                                    <p>In conclusion to this <em>very</em> long passage, are ethical dilemmas worth discussing? Oh yeah. Do they expand on our cultural landscape and provide a fresh outlook on humankind's nature? Uh–huh. And is there a right answer to an ethical question? Doubtful, but I sincerely hope that <strong>whenever it comes down to a choice between reason and love, we will always deign to choose love.</strong></p>
+
+                                    <p style="font-style: italic; margin-top: 2em;"><em>To be continued...</em> (next week's topic: Beauty and Love!!)</p>
+
+                                    <a href="../blog.html" class="button small" style="margin-top: 2em;">← Back to Blog</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-foot">
+        <div class="wrap foot-inner">
+            <div class="sig">&copy; Situ E. Chen. All rights reserved.</div>
+            <div><a href="../blog.html" class="link">← Back to Blog</a></div>
+        </div>
+    </footer>
+    <script>
+        (function(){
+            const t = document.getElementById('nav-toggle');
+            const n = document.querySelector('.nav');
+            if (!t || !n) return;
+            t.addEventListener('click', () => {
+                const open = n.classList.toggle('open');
+                t.classList.toggle('open', open);
+                t.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            n.addEventListener('click', e => {
+                if (e.target.tagName === 'A') {
+                    n.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
