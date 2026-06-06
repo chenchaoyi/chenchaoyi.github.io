@@ -71,61 +71,9 @@
             margin-top: 2em;
             margin-bottom: 1em;
         }
-        /* Betrayal decision tree — rebuilt from the original flow chart */
-        .flowchart {
-            margin: 2.2em auto;
-            max-width: 640px;
-        }
-        .fc-root, .fc-choice, .fc-out {
-            border: 1px solid var(--rule);
-            border-radius: 6px;
-            text-align: center;
-        }
-        .fc-root {
-            padding: 0.9em 1.1em;
-            background: var(--bg-deep);
-            color: var(--ink);
-        }
-        .fc-branches {
-            display: flex;
-            gap: 1.4em;
-            margin-top: 1.3em;
-        }
-        .fc-branch {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .fc-choice {
-            padding: 0.75em 0.9em;
-            background: var(--bg-card);
-            color: var(--ink);
-            font-style: italic;
-        }
-        .fc-odds {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.68rem;
-            letter-spacing: 0.18em;
-            color: var(--accent);
-            text-align: center;
-            margin: 0.85em 0;
-        }
-        .fc-outcomes {
-            display: flex;
-            gap: 0.75em;
-        }
-        .fc-out {
-            flex: 1;
-            padding: 0.7em 0.75em;
-            font-size: 0.82rem;
-            line-height: 1.5;
-            color: var(--ink-soft);
-            background: var(--bg-card);
-        }
         @media (max-width: 640px) {
             .image-container img        { max-width: 85% !important; }
             .image-container img.sq     { max-width: 62% !important; }
-            .fc-branches { flex-direction: column; gap: 1em; }
         }
     </style>
 </head>
@@ -179,11 +127,7 @@
                                     <p>I wouldn't pull the lever. If I did, I would have to live the rest of my life chained to the lock of guilt; if I didn't, I would be a guilty bystander rather than a guilty perpetrator. It is a selfish decision, but if there were people willing to sacrifice their moral stability for the sake of five people, I applaud them; I am not one of them. Among other reasons such as to avoid legal punishment and to ease the claws of my conscience, the answer seems clear. I do not want to decide the fate of that one person, which is what would happen if I pulled the lever. If I stood by, at least I would only become the chained witness to the fates of five people.</p>
 
                                     <div class="image-container">
-                                        <img src="../images/blog/ethics/ethics-1.png" alt="The trolley problem: a tram, a split track and the lever" class="banner" />
-                                    </div>
-
-                                    <div class="image-container">
-                                        <img src="../images/blog/ethics/ethics-2.png" alt="Five people tied to one track, one person tied to the other" class="banner" />
+                                        <img src="../images/blog/ethics/ethics-1.png" alt="The trolley problem: a tram, the lever, five people tied to one track and one person tied to the other" class="wide" />
                                     </div>
 
                                     <p>Here's an interesting branch of this question: There is only one railroad track, and the train is heading towards the five people. A fat man is leaning over the track in front of the train. Would you push him so that the train stops for him instead of the five people?</p>
@@ -193,7 +137,7 @@
                                     <p>Research interestingly enlightens me that (and I agree) the main mental reason why someone wouldn't push the fat man but would pull the lever is the difference between intending and foreseeing harm. By pushing the fat man, you are <em>intending</em> harm, initiating the act of it, when the natural decision would have been to do nothing. However, by pulling the trolley, your main considerations are on preventing the foreseen deaths of the five people with the death of the one person being an unfortunate side-effect. The phycological difference between initiation and prediction is just another impactful factor of queries on morality.</p>
 
                                     <div class="image-container">
-                                        <img src="../images/blog/ethics/ethics-3.png" alt="A man reaching for the lever as the train approaches" class="wide" />
+                                        <img src="../images/blog/ethics/ethics-3.png" alt="The fat man leaning over the track as the train approaches" class="wide" />
                                     </div>
 
                                     <p>However, a separate trail appears: what if one of my family members, say my father, were among the five people? I'm certain my decision would have been different then; I would have pulled the lever or pushed the fat man. But that doesn't erase the lock of guilt that is sure to follow.</p>
@@ -216,26 +160,8 @@
 
                                     <p>If my gang would not punish me for betraying the member, I would choose the option of betrayal. Below is a flow chart of why:</p>
 
-                                    <div class="flowchart">
-                                        <div class="fc-root">I can choose whether I want to betray the gang member or remain silent.</div>
-                                        <div class="fc-branches">
-                                            <div class="fc-branch">
-                                                <div class="fc-choice">I remain silent.</div>
-                                                <div class="fc-odds">50 / 50</div>
-                                                <div class="fc-outcomes">
-                                                    <div class="fc-out">The gang member betrays me, and I spend 3 years in prison.</div>
-                                                    <div class="fc-out">The gang member remains silent, and we each get a year.</div>
-                                                </div>
-                                            </div>
-                                            <div class="fc-branch">
-                                                <div class="fc-choice">I betray the gang member.</div>
-                                                <div class="fc-odds">50 / 50</div>
-                                                <div class="fc-outcomes">
-                                                    <div class="fc-out">The gang member remains silent, and I am set free.</div>
-                                                    <div class="fc-out">The gang member betrays me, and we each get 2 years.</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="image-container">
+                                        <img src="../images/blog/ethics/ethics-flowchart.png" alt="Flow chart: whether to betray the gang member or remain silent, and the four possible outcomes" class="banner" />
                                     </div>
 
                                     <p>By remaining silent, I will have to serve years at prison no matter the outcome. By betraying the gang member, I have a 50/50 chance of being set free, while in remaining silent, the most hopeful outcome would be one year in prison. Answering this dilemma (for me) is a comparison between:</p>
