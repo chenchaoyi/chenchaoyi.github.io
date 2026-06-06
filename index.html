@@ -166,6 +166,31 @@
             </div>
         </section>
 
+        <!-- JOURNAL -->
+        <section id="journal" class="bleed">
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <h2>I also keep a <em>journal</em>.</h2>
+                        <p class="desc">Essays, book &amp; movie reviews, drawings and the occasional poem. Here's what's new:</p>
+                    </div>
+                </div>
+
+                <ul class="post-list">
+                    <li><a class="post-link" href="https://mp.weixin.qq.com/s/HRNHbyNktUCZ4AtcW1BZoA" target="_blank" rel="noopener"><span class="pdate">Jun 1 2026</span><span class="pmeta"><span class="ptitle">📚 A Mind Appears</span><span class="pblurb">A book review of <i><b style="color: #3498db">A World Appears</b></i></span></span><span class="parrow">↗</span></a></li>
+
+                    <li><a class="post-link" href="https://mp.weixin.qq.com/s/n2BJqs67dgX15xpnOwmn9g" target="_blank" rel="noopener"><span class="pdate">Mar 22 2026</span><span class="pmeta"><span class="ptitle">🎬 An Unremarkable School Teacher Who Saved Earth With An Alien</span><span class="pblurb">A movie review of <i><b style="color: #3498db">Project Hail Mary</b></i></span></span><span class="parrow">↗</span></a></li>
+
+                    <li><a class="post-link" href="blogs/some-recent-drawings-post.html"><span class="pdate">Feb 23 2026</span><span class="pmeta"><span class="ptitle">Some Recent Drawings</span><span class="pblurb">Seven drawings from this month — and the poodle behind one of them</span></span><span class="parrow">→</span></a></li>
+                </ul>
+
+                <div class="work-footnote" style="margin-top: 3rem;">
+                    <p>There's plenty more where these came from.</p>
+                    <a href="blog.html" class="btn btn-primary">Read the full Journal <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </section>
+
         <!-- CONTACT -->
         <section id="contact" class="bleed">
             <div class="wrap">
@@ -250,7 +275,7 @@
         const setActive = () => {
             const y = window.scrollY + window.innerHeight * 0.3;
             let current = 'top';
-            document.querySelectorAll('section[id]').forEach(s => {
+            document.querySelectorAll('section[id]:not(#journal)').forEach(s => {
                 if (y >= s.offsetTop) current = s.id;
             });
             if (window.scrollY < 200) current = 'top';

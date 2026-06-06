@@ -83,6 +83,7 @@ Editorial / literary. Warm cream page with deep ink type, a single terracotta ac
    - `Film` → "Movie Reviews"
    - `Game` → "Game Reviews"
 4. External links (WeChat articles) use `target="_blank" rel="noopener"` and the arrow becomes `↗`.
+5. The homepage `#journal` section mirrors the **three most recent** entries of `blog.html` (same `<li>` markup, minus `data-cat`/`data-date`). If the new post lands in the top three, update `index.html` accordingly.
 
 ### Adding a new book to the Portfolio
 Edit the `.portfolio-grid` in `index.html`. Use an `<a class="book">` with a `.cover img`, `.meta` (h3 + `.kind` label), and a `<p>` blurb. Cover image goes in `images/` as a JPG.
