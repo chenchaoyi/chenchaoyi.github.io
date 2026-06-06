@@ -29,7 +29,6 @@
                     <li><a href="#work">Work</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="causes.html">Things I Care About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
@@ -83,12 +82,13 @@
 
                     <article class="work-item">
                         <h3>I also have a lot of <em>other hobbies</em></h3>
-                        <p>like watching mystery movies, reading fiction novels, creating my own videos and writing book/movie reviews. I also have a gray poodle named Tedo, and I'm very proud of her!</p>
+                        <p>like watching mystery movies, reading fiction novels, creating my own videos and writing book/movie reviews. I also have a gray poodle named Tedo, and I'm very proud of her! The reviews — plus essays, poems and drawings — all live on my blog.</p>
+                        <a href="blog.html" class="link" style="display: inline-block; margin-top: 1rem; color: var(--accent);">Read my blog <span style="font-family: var(--serif);">→</span></a>
                     </article>
                 </div>
 
                 <div class="work-footnote">
-                    <p>I care very deeply about <strong>gender equality</strong> and <strong>slaughterhouse animal rights</strong>. I especially advocate for the rights of slaughterhouse-born chickens and pigs, and I hope to spread that message using my work.</p>
+                    <p>I care very deeply about <strong><a href="causes.html" style="background-size: 100% 1px;">gender equality</a></strong> and <strong><a href="causes.html" style="background-size: 100% 1px;">slaughterhouse animal rights</a></strong>. I especially advocate for the rights of slaughterhouse-born chickens and pigs, and I hope to spread that message using my work.</p>
                     <a href="#portfolio" class="btn">See some of my recent work <span class="arrow">→</span></a>
                 </div>
             </div>
@@ -162,31 +162,6 @@
                 <div class="work-footnote" style="margin-top: 4rem;">
                     <p>Do you want to see more of my recent work?</p>
                     <a href="#contact" class="btn btn-primary">Get in touch with me <span class="arrow">→</span></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- JOURNAL -->
-        <section id="journal" class="bleed">
-            <div class="wrap">
-                <div class="sec-head">
-                    <div>
-                        <h2>I also keep a <em>journal</em>.</h2>
-                        <p class="desc">Essays, book &amp; movie reviews, drawings and the occasional poem. Here's what's new:</p>
-                    </div>
-                </div>
-
-                <ul class="post-list">
-                    <li><a class="post-link" href="https://mp.weixin.qq.com/s/HRNHbyNktUCZ4AtcW1BZoA" target="_blank" rel="noopener"><span class="pdate">Jun 1 2026</span><span class="pmeta"><span class="ptitle">📚 A Mind Appears</span><span class="pblurb">A book review of <i><b style="color: #3498db">A World Appears</b></i></span></span><span class="parrow">↗</span></a></li>
-
-                    <li><a class="post-link" href="https://mp.weixin.qq.com/s/n2BJqs67dgX15xpnOwmn9g" target="_blank" rel="noopener"><span class="pdate">Mar 22 2026</span><span class="pmeta"><span class="ptitle">🎬 An Unremarkable School Teacher Who Saved Earth With An Alien</span><span class="pblurb">A movie review of <i><b style="color: #3498db">Project Hail Mary</b></i></span></span><span class="parrow">↗</span></a></li>
-
-                    <li><a class="post-link" href="blogs/some-recent-drawings-post.html"><span class="pdate">Feb 23 2026</span><span class="pmeta"><span class="ptitle">Some Recent Drawings</span><span class="pblurb">Seven drawings from this month — and the poodle behind one of them</span></span><span class="parrow">→</span></a></li>
-                </ul>
-
-                <div class="work-footnote" style="margin-top: 3rem;">
-                    <p>There's plenty more where these came from.</p>
-                    <a href="blog.html" class="btn btn-primary">Read the full Journal <span class="arrow">→</span></a>
                 </div>
             </div>
         </section>
@@ -275,7 +250,7 @@
         const setActive = () => {
             const y = window.scrollY + window.innerHeight * 0.3;
             let current = 'top';
-            document.querySelectorAll('section[id]:not(#journal)').forEach(s => {
+            document.querySelectorAll('section[id]').forEach(s => {
                 if (y >= s.offsetTop) current = s.id;
             });
             if (window.scrollY < 200) current = 'top';

@@ -83,13 +83,13 @@ Editorial / literary. Warm cream page with deep ink type, a single terracotta ac
    - `Film` → "Movie Reviews"
    - `Game` → "Game Reviews"
 4. External links (WeChat articles) use `target="_blank" rel="noopener"` and the arrow becomes `↗`.
-5. The homepage `#journal` section mirrors the **three most recent** entries of `blog.html` (same `<li>` markup, minus `data-cat`/`data-date`). If the new post lands in the top three, update `index.html` accordingly.
+5. The homepage links to the blog from the "other hobbies" Work card ("Read my blog →") — no per-post upkeep needed there.
 
 ### Adding a new book to the Portfolio
 Edit the `.portfolio-grid` in `index.html`. Use an `<a class="book">` with a `.cover img`, `.meta` (h3 + `.kind` label), and a `<p>` blurb. Cover image goes in `images/` as a JPG.
 
 ### Nav menu
-Six fixed items, same on every page. If you add a page, add a `<li>` to ALL of: `index.html`, `blog.html`, `causes.html`, and every file in `blogs/`. The mobile hamburger script handles itself.
+Five fixed items (Top · Work · Portfolio · Blog · Contact), same on every page. `causes.html` is not in the nav — it's reached via the cause links in the Work footnote on `index.html`. If you add a page, add a `<li>` to ALL of: `index.html`, `blog.html`, `causes.html`, and every file in `blogs/`. The mobile hamburger script handles itself.
 
 ### Editing copy
 Keep the existing voice — Situ wrote it. Don't rewrite or "polish" her words unless asked. Common pitfalls:
