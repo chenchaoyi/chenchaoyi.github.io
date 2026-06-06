@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skeletons in the writer’s closet - Situ E. Chen</title>
+    <link rel="icon" type="image/svg+xml" href="../images/site/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="../images/site/favicon.ico" />
+    <link rel="apple-touch-icon" href="../images/site/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <style>
+        .single-line-title {
+            font-size: 2.2em;
+        }
+        /* Plate gallery — the original was an image carousel; here each
+           drawing gets its own full frame, staggered for editorial rhythm. */
+        .plates {
+            margin-top: 2.5em;
+        }
+        .plate {
+            margin: 0 0 3em;
+        }
+        .plate img {
+            display: block;
+            width: 86%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+        }
+        .plate.full img  { width: 100%; }
+        .plate.left img  { margin-right: auto; }
+        .plate.right img { margin-left: auto; }
+        .plate-rule {
+            display: flex;
+            align-items: center;
+            gap: 0.9em;
+            margin: 0 auto 3em;
+            width: 56%;
+        }
+        .plate-rule::before,
+        .plate-rule::after {
+            content: "";
+            flex: 1;
+            border-top: 1px solid var(--rule);
+        }
+        .plate-rule .dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex: none;
+        }
+        @media (max-width: 640px) {
+            .plate img { width: 100% !important; }
+            .plate { margin-bottom: 2.2em; }
+            .plate-rule { margin-bottom: 2.2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="../index.html" class="brand">
+                <span class="brand-name">
+                    <span class="brand-en">Situ E. Chen</span>
+                    <span class="mono">situchen.me</span>
+                </span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="../index.html#top">Top</a></li>
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../causes.html">Things I Care About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="wrapper style2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 col-12-medium" style="margin: 0 auto; max-width: 800px;">
+                        <article class="box style1" style="padding: 3em;">
+                            <h2 class="single-line-title">Skeletons in the writer’s closet</h2>
+                            <p class="post-meta">Posted on December 28, 2025</p>
+
+                            <div class="plates">
+                                <figure class="plate full">
+                                    <img src="../images/blog/skeletons/skeletons-1.jpg" alt="all writers leak. — a writer at a laptop, words spilling quietly out of them" />
+                                </figure>
+
+                                <div class="plate-rule" aria-hidden="true"><span class="dot"></span></div>
+
+                                <figure class="plate left">
+                                    <img src="../images/blog/skeletons/skeletons-2.jpg" alt="writing is about looking out this window. — a girl gazing into a glowing window" />
+                                </figure>
+
+                                <figure class="plate right">
+                                    <img src="../images/blog/skeletons/skeletons-3.jpg" alt="JUST WRITE. — a writer bundled up with a laptop beside a small campfire" />
+                                </figure>
+
+                                <div class="plate-rule" aria-hidden="true"><span class="dot"></span></div>
+
+                                <figure class="plate full">
+                                    <img src="../images/blog/skeletons/skeletons-4.jpg" alt="Here is my story — a black-and-white collage of desk scenes, drafts and late nights" />
+                                </figure>
+
+                                <figure class="plate left">
+                                    <img src="../images/blog/skeletons/skeletons-5.jpg" alt="Doodles of the writing life: chasing drafts, an inkwell, rain inside a laptop, and a First Draft" />
+                                </figure>
+
+                                <div class="plate-rule" aria-hidden="true"><span class="dot"></span></div>
+
+                                <figure class="plate full">
+                                    <img src="../images/blog/skeletons/skeletons-6.jpg" alt="The writer’s desk in full color — books, laptop, globe, and scattered notes in the sun" />
+                                </figure>
+                            </div>
+
+                            <a href="../blog.html" class="button small" style="margin-top: 2em;">← Back to Blog</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-foot">
+        <div class="wrap foot-inner">
+            <div class="sig">&copy; Situ E. Chen. All rights reserved.</div>
+            <div><a href="../blog.html" class="link">← Back to Blog</a></div>
+        </div>
+    </footer>
+    <script>
+        (function(){
+            const t = document.getElementById('nav-toggle');
+            const n = document.querySelector('.nav');
+            if (!t || !n) return;
+            t.addEventListener('click', () => {
+                const open = n.classList.toggle('open');
+                t.classList.toggle('open', open);
+                t.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            n.addEventListener('click', e => {
+                if (e.target.tagName === 'A') {
+                    n.classList.remove('open');
+                    t.classList.remove('open');
+                    t.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
